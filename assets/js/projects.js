@@ -16,7 +16,7 @@
       cover: 'nutrilift-landing',
       coverCap: {
         en: 'The landing page states the promise — nutrition you can trace to a source — with an inline citation and a figure the model was not allowed to invent.',
-        th: 'หน้าแรกบอกจุดยืนชัด ๆ — ข้อมูลโภชนาการที่ตรวจย้อนถึงแหล่งที่มาได้ พร้อมการอ้างอิงในข้อความ และตัวเลขที่โมเดลไม่ได้แต่งขึ้นเอง',
+        th: 'หน้าแรกบอกจุดยืนไว้ชัด: ข้อมูลโภชนาการต้องตรวจย้อนไปถึงแหล่งที่มาได้ โดยโชว์ทั้งการอ้างอิงในข้อความ และตัวเลขที่โมเดลแต่งเองไม่ได้',
       },
       kind: { en: 'Full-stack & evaluation', th: 'Full-stack และการวัดผล' },
       role: { en: 'Full-stack & evaluation', th: 'Full-stack และการวัดผล' },
@@ -41,7 +41,7 @@
             th: 'คนเล่นเวทมักถามคำถามโภชนาการเดิม ๆ ซ้ำไปมา — ต้องกินโปรตีนเท่าไหร่ ช่วงลดไขมันควรกินกี่แคลอรี ก่อนและหลังซ้อมควรกินอะไร แชตบอตทั่วไปตอบได้อย่างมั่นใจ แต่ตัวเลขตรวจสอบไม่ได้ NutriLift ตอบเป็นภาษาไทยจากฐานความรู้ที่คัดมาแล้ว และตัวเลขทุกตัวมาจากโค้ดที่มี test ไม่ได้มาจากโมเดล',
           } },
         { h: { en: 'My part', th: 'ส่วนที่ผมทำ' },
-          p: { en: 'This is my final-year project and I built all of it:', th: 'เป็นโปรเจกต์จบ และผมสร้างเองทั้งหมด:' },
+          p: { en: 'This is my final-year project and I built all of it:', th: 'โปรเจกต์จบของผม ทำเองทั้งหมด:' },
           items: {
             en: [
               'A FastAPI backend, a Next.js chat interface, and a PostgreSQL store for the knowledge base.',
@@ -51,9 +51,9 @@
             ],
             th: [
               'Backend ด้วย FastAPI, หน้าแชตด้วย Next.js และ PostgreSQL สำหรับเก็บฐานความรู้',
-              'สูตรคำนวณโภชนาการ — พลังงานที่ต้องการต่อวันและเป้าหมาย macro — เขียนเป็นฟังก์ชัน Python ที่มี test แล้วส่งให้โมเดลใช้เป็น tool โมเดลตัดสินใจแค่ว่าจะคำนวณเมื่อไหร่ แต่ไม่เคยเป็นคนกำหนดตัวเลข',
-              'กฎความปลอดภัย 8 ข้อ โดย 6 ข้อตัดสินในโค้ด ทำให้พูดหลอกโมเดลให้ข้ามกฎไม่ได้',
-              'ทดสอบว่าฐานความรู้ช่วยได้จริงไหม: ให้ตอบ 150 คำถามเดียวกันทั้งแบบมีและไม่มีฐานความรู้ แล้วให้อีกโมเดลหนึ่งให้คะแนนแบบไม่รู้ว่าคำตอบไหนมาจากแบบไหน — คำตอบที่อิงฐานความรู้ชนะทุกเกณฑ์',
+              'สูตรคำนวณโภชนาการ — พลังงานที่ต้องการต่อวันและเป้าหมาย macro — เขียนเป็นฟังก์ชัน Python ที่มี test แล้วส่งให้โมเดลใช้เป็น tool โมเดลตัดสินใจแค่ว่าจะคำนวณเมื่อไหร่ แต่ไม่ได้เป็นผู้กำหนดตัวเลข',
+              'กฎความปลอดภัย 8 ข้อ โดย 6 ข้อบังคับใช้ในโค้ด จึงพูดหลอกให้โมเดลข้ามกฎไม่ได้',
+              'ทดสอบว่าฐานความรู้ช่วยได้จริงไหม: ให้ตอบ 150 คำถามเดียวกันทั้งแบบมีและไม่มีฐานความรู้ แล้วให้โมเดลอีกตัวเป็นกรรมการให้คะแนน โดยไม่บอกว่าคำตอบไหนมาจากแบบไหน — คำตอบที่อิงฐานความรู้ชนะทุกเกณฑ์',
             ],
           } },
         { h: { en: 'What it does', th: 'ทำอะไรได้บ้าง' },
@@ -66,11 +66,11 @@
               'Asks for consent before storing health data: two separate ticks at sign-up, recorded with a version, so changing the wording re-asks everyone.',
             ],
             th: [
-              'ตอบคำถามโภชนาการเป็นภาษาไทย ทุกข้อความมีแหล่งอ้างอิง และบอกตรง ๆ ว่าไม่รู้ เมื่อคำถามอยู่นอกขอบเขตข้อมูล',
+              'ตอบคำถามโภชนาการเป็นภาษาไทย ทุกคำตอบมีแหล่งอ้างอิงกำกับ และบอกตรง ๆ ว่าไม่รู้ เมื่อคำถามอยู่นอกขอบเขตข้อมูล',
               'แปลงส่วนสูง น้ำหนัก อายุ และเป้าหมาย เป็นเป้าแคลอรีและ macro ต่อวัน',
               'จัดเมนูทั้งวันจากตารางอาหารไทย 356 รายการ แทนการให้โมเดลกำหนดปริมาณเอง',
               'บันทึกสิ่งที่กินจริง และเทียบกับเป้าหมายที่ตั้งไว้',
-              'ขอความยินยอมก่อนเก็บข้อมูลสุขภาพ: ติ๊กแยกกัน 2 ช่องตอนสมัคร บันทึกพร้อมเวอร์ชัน ถ้าแก้ข้อความเมื่อไหร่ ระบบจะถามทุกคนใหม่',
+              'ขอความยินยอมก่อนเก็บข้อมูลสุขภาพ: ให้ติ๊กยินยอมแยก 2 ช่องตอนสมัคร และบันทึกเวอร์ชันของข้อความไว้ ถ้าแก้ข้อความเมื่อไหร่ ระบบจะขอความยินยอมจากทุกคนใหม่',
             ],
           } },
         { h: { en: 'Tools', th: 'เครื่องมือ' },
@@ -82,7 +82,7 @@
       gallery: [
         { src: 'nutrilift-chat', cap: { en: 'A day of meals assembled from the food table, with the sources panel beside it', th: 'เมนูทั้งวันที่จัดจากตารางอาหาร พร้อมแผงแหล่งอ้างอิงด้านข้าง' } },
         { src: 'nutrilift-goals', cap: { en: 'BMR, TDEE and macro targets — computed by code, with the formulas and references shown', th: 'BMR, TDEE และเป้า macro — คำนวณด้วยโค้ด พร้อมแสดงสูตรและแหล่งอ้างอิง' } },
-        { src: 'nutrilift-foodlog', cap: { en: 'The food log tracks what was actually eaten against those targets', th: 'บันทึกอาหารเทียบสิ่งที่กินจริงกับเป้าหมาย' } },
+        { src: 'nutrilift-foodlog', cap: { en: 'The food log tracks what was actually eaten against those targets', th: 'บันทึกอาหาร เทียบสิ่งที่กินจริงกับเป้าหมาย' } },
       ],
     },
 
@@ -110,7 +110,7 @@
         { h: { en: 'Overview', th: 'ภาพรวม' },
           p: {
             en: 'Looking up Thai law means knowing which code to open and roughly where the answer lives. Asking a general chatbot instead gets you an answer that sounds right and cites sections that may not exist. This system sits between the two: questions can be asked in everyday language, and every section it quotes is pulled from an indexed copy of the real text rather than written from the model’s memory.',
-            th: 'การค้นกฎหมายไทยต้องรู้ว่าจะเปิดประมวลไหน และคำตอบอยู่ราว ๆ ตรงไหน ถ้าไปถามแชตบอตทั่วไปแทน ก็จะได้คำตอบที่ฟังดูถูก แต่อ้างมาตราที่อาจไม่มีอยู่จริง ระบบนี้อยู่ตรงกลาง: ถามด้วยภาษาพูดได้ และทุกมาตราที่อ้างถึงดึงมาจากสำเนาตัวบทจริงที่ทำดัชนีไว้ ไม่ได้มาจากความจำของโมเดล',
+            th: 'การค้นกฎหมายไทยต้องรู้ว่าจะเปิดประมวลไหน และคำตอบอยู่ราว ๆ ตรงไหน ถ้าไปถามแชตบอตทั่วไปแทน ก็จะได้คำตอบที่ฟังดูถูก แต่อ้างมาตราที่อาจไม่มีอยู่จริง ระบบนี้อยู่ตรงกลางระหว่างสองทางนั้น: ถามด้วยภาษาพูดได้ และทุกมาตราที่อ้างถึงดึงมาจากสำเนาตัวบทจริงที่ทำดัชนีไว้ ไม่ได้มาจากความจำของโมเดล',
           } },
         { h: { en: 'My part', th: 'ส่วนที่ผมทำ' },
           p: { en: 'A solo project — I built all of it:', th: 'ทำคนเดียวทั้งโปรเจกต์:' },
@@ -123,9 +123,9 @@
             ],
             th: [
               'รวบรวมประมวลกฎหมาย 4 ฉบับและคำพิพากษาจาก open dataset รวมฉบับแก้ไขเข้ากับตัวบทหลัก และทำดัชนีแบบ 1 มาตราต่อ 1 chunk — ถ้าตัดข้อความตามความยาวคงที่ จะมีบางมาตราหลุดจากดัชนีไปทั้งมาตรา',
-              'ระบบค้นหา: ค้นด้วย vector สองแบบพร้อมกัน รวมอันดับเข้าด้วยกัน แล้วจัดลำดับใหม่ด้วย cross-encoder จนเหลือ 8 มาตราที่ส่งให้โมเดล',
+              'ระบบค้นหา: ค้นด้วย vector สองแบบพร้อมกัน (dense และ sparse) รวมอันดับเข้าด้วยกัน แล้วจัดลำดับใหม่ด้วย cross-encoder จนเหลือ 8 มาตราที่ส่งให้โมเดล',
               'Pipeline ประเมินคดี: แยกเรื่องเป็นประเด็น หามาตราที่เกี่ยวข้อง ไล่องค์ประกอบความผิดทีละข้อ แล้วจึงตัดสิน — คำตัดสินคำนวณจากคำตอบเหล่านั้นในโค้ด จึงเป็นไปตามองค์ประกอบ ไม่ใช่ตามที่โมเดลอยากสรุป',
-              'จูนระบบค้นหาด้วยการวัดผล เขียนชุดคำถามเองสำหรับ 3 ประมวลที่ benchmark สาธารณะไม่ครอบคลุม เพื่อไม่ให้ตัวเลขมาจาก ป.พ.พ. อย่างเดียว',
+              'จูนระบบค้นหาโดยวัดผลจริง และเขียนชุดคำถามเองสำหรับอีก 3 ประมวลที่ benchmark สาธารณะไม่ครอบคลุม ตัวเลขจึงไม่ได้มาจาก ป.พ.พ. อย่างเดียว',
             ],
           } },
         { h: { en: 'What it does', th: 'ทำอะไรได้บ้าง' },
@@ -140,9 +140,9 @@
             th: [
               'ตอบคำถามภาษาพูด พร้อมแสดงมาตราที่ใช้แบบเต็มข้างคำตอบ',
               'กำกับทุกการอ้างอิงด้วยผลการตรวจ และบอกชัดว่าการตรวจยืนยันแค่ว่ามาตรามีจริงและอ้างถูก — ไม่ได้ยืนยันว่าการตีความถูก',
-              'รับเหตุการณ์แบบพิมพ์หรืออัปโหลด PDF/DOCX แล้วคืนคำตัดสินพร้อมองค์ประกอบที่นำไปสู่คำตัดสินนั้น',
+              'รับเรื่องที่พิมพ์เล่าหรืออัปโหลดเป็น PDF/DOCX แล้วให้คำตัดสินพร้อมองค์ประกอบที่นำไปสู่คำตัดสินนั้น',
               'เปิดดูมาตราใดก็ได้แยกหน้า พร้อมมาตราที่อ้างถึงและคำพิพากษาที่อ้างมาตรานั้น',
-              'โดยค่าเริ่มต้นส่งเฉพาะข้อความที่ดึงบนเครื่องผู้ใช้ ไม่ส่งไฟล์ที่อัปโหลด และขอความยินยอมก่อนทุกครั้ง',
+              'โดยค่าเริ่มต้นจะส่งเฉพาะข้อความที่ดึงออกมาบนเครื่องผู้ใช้ ไม่ส่งตัวไฟล์ และขอความยินยอมก่อนทุกครั้ง',
             ],
           } },
         { h: { en: 'Tools', th: 'เครื่องมือ' },
@@ -177,13 +177,13 @@
       ],
       summary: {
         en: 'A model that flags illicit Bitcoin transactions in the Elliptic dataset. It is tested on later time periods than it was trained on, so the score reflects activity the model has never seen.',
-        th: 'โมเดลจับธุรกรรม Bitcoin ผิดกฎหมายในชุดข้อมูล Elliptic ทดสอบกับช่วงเวลาหลังจากที่ใช้เทรน คะแนนจึงสะท้อนพฤติกรรมที่โมเดลไม่เคยเห็นมาก่อน',
+        th: 'โมเดลจับธุรกรรม Bitcoin ผิดกฎหมายในชุดข้อมูล Elliptic ทดสอบกับช่วงเวลาที่อยู่หลังช่วงที่ใช้เทรน คะแนนจึงสะท้อนพฤติกรรมที่โมเดลไม่เคยเห็นมาก่อน',
       },
       sections: [
         { h: { en: 'Overview', th: 'ภาพรวม' },
           p: {
             en: 'A group project for a big data course. The Elliptic dataset records Bitcoin transactions as a graph and marks some of them as illicit or legitimate, which makes it a fair test of whether a model can spot criminal activity among ordinary payments.',
-            th: 'งานกลุ่มวิชา Big Data ชุดข้อมูล Elliptic เก็บธุรกรรม Bitcoin เป็นกราฟ และระบุบางรายการว่าผิดกฎหมายหรือถูกกฎหมาย จึงเป็นบททดสอบที่ยุติธรรมว่าโมเดลแยกธุรกรรมอาชญากรรมออกจากการจ่ายเงินปกติได้หรือไม่',
+            th: 'งานกลุ่มวิชา Big Data ใช้ชุดข้อมูล Elliptic ที่เก็บธุรกรรม Bitcoin เป็นกราฟ และระบุบางรายการว่าผิดหรือถูกกฎหมาย จึงเหมาะใช้ทดสอบว่าโมเดลแยกธุรกรรมผิดกฎหมายออกจากการจ่ายเงินปกติได้หรือไม่',
           } },
         { h: { en: 'My part', th: 'ส่วนที่ผมทำ' },
           items: {
@@ -194,10 +194,10 @@
               'Wired the trained models into the team’s Streamlit app so a transaction can be scored one at a time.',
             ],
             th: [
-              'แบ่งข้อมูลตามเวลาแทนการสุ่ม: เทรนด้วยช่วงก่อน ทดสอบด้วยช่วงหลัง โมเดลจึงไม่เคยถูกวัดผลกับช่วงที่เคยเห็น — พฤติกรรมอาชญากรเปลี่ยนตามเวลา ถ้าสุ่มแบ่งผลจะดูดีเกินจริง',
-              'ปรับสมดุลข้อมูลเทรน ซึ่งมีธุรกรรมผิดกฎหมายเพียงราว 1 ใน 9 เพื่อไม่ให้โมเดลเรียนรู้แค่การตอบว่า "ปกติ" ทุกรายการ',
+              'แบ่งข้อมูลตามเวลาแทนการสุ่ม: เทรนด้วยช่วงก่อน ทดสอบด้วยช่วงหลัง โมเดลจึงไม่เคยถูกวัดผลกับช่วงที่เคยเห็น — พฤติกรรมของมิจฉาชีพเปลี่ยนไปตามเวลา ถ้าสุ่มแบ่ง ผลจะดูดีเกินจริง',
+              'ปรับสมดุลข้อมูลเทรน ซึ่งมีธุรกรรมผิดกฎหมายเพียงราว 1 ใน 9 เพื่อไม่ให้โมเดลเอาง่ายด้วยการตอบว่า "ปกติ" ทุกรายการ',
               'เทรน 3 โมเดล — Logistic Regression, Random Forest และ XGBoost — แล้วเทียบกันบนช่วงทดสอบเดียวกัน',
-              'เชื่อมโมเดลเข้ากับแอป Streamlit ของทีม ให้ให้คะแนนธุรกรรมทีละรายการได้',
+              'เชื่อมโมเดลเข้ากับแอป Streamlit ของทีม เพื่อให้คะแนนธุรกรรมได้ทีละรายการ',
             ],
           } },
         { h: { en: 'What the numbers say', th: 'ตัวเลขบอกอะไร' },
@@ -214,7 +214,7 @@
             th: [
               'XGBoost จับได้ 794 จาก 1,083 ธุรกรรมผิดกฎหมาย โดยแจ้งเตือนผิดเพียง 83 จาก 15,587 ธุรกรรมปกติ',
               'Random Forest ได้ผลแทบเท่ากัน ใช้แทนกันได้ในงานนี้',
-              'Logistic Regression จับได้มากกว่าเล็กน้อย — 906 — แต่แจ้งเตือนผิดถึง 3,524 ครั้ง เท่ากับนักวิเคราะห์ต้องไล่ตามเคสหลอกราว 4 เคสต่อเคสจริง 1 เคส — ตัวอย่างชัดเจนว่าตัวเลขเดียวไม่พอจะตัดสินว่าโมเดลไหนดีกว่า',
+              'Logistic Regression จับได้มากกว่าเล็กน้อย — 906 — แต่แจ้งเตือนผิดถึง 3,524 ครั้ง เท่ากับนักวิเคราะห์ต้องไล่ตามเคสหลอกราว 4 เคสต่อเคสจริง 1 เคส — เป็นตัวอย่างชัดเจนว่าตัวเลขเดียวไม่พอจะตัดสินว่าโมเดลไหนดีกว่า',
             ],
           } },
         { h: { en: 'Tools', th: 'เครื่องมือ' },
@@ -225,7 +225,7 @@
       ],
       gallery: [
         { src: 'crypto-cm-xgboost', cap: { en: 'XGBoost on the held-out period: 794 illicit transactions caught, 289 missed, 83 false alarms', th: 'XGBoost บนช่วงทดสอบ: จับได้ 794 พลาด 289 แจ้งเตือนผิด 83' } },
-        { src: 'crypto-cm-logreg', cap: { en: 'The same period for the linear baseline: 906 caught, but 3,524 legitimate transactions wrongly flagged', th: 'ช่วงเดียวกันของ baseline เชิงเส้น: จับได้ 906 แต่ธุรกรรมปกติถูกแจ้งผิด 3,524 รายการ' } },
+        { src: 'crypto-cm-logreg', cap: { en: 'The same period for the linear baseline: 906 caught, but 3,524 legitimate transactions wrongly flagged', th: 'baseline เชิงเส้นในช่วงเดียวกัน: จับได้ 906 แต่ธุรกรรมปกติถูกแจ้งผิด 3,524 รายการ' } },
         { src: 'crypto-feature-importance', cap: { en: 'The twenty features the model leaned on most when separating illicit transactions from ordinary ones', th: '20 feature ที่โมเดลใช้มากที่สุดในการแยกธุรกรรมผิดกฎหมายออกจากธุรกรรมปกติ' } },
       ],
     },
@@ -253,13 +253,13 @@
       ],
       summary: {
         en: 'A natural-language-processing pipeline that reads 10,000 Yelp restaurant reviews and labels each one as positive, neutral or negative.',
-        th: 'NLP pipeline ที่อ่านรีวิวร้านอาหารจาก Yelp 10,000 รีวิว แล้วจัดแต่ละรีวิวเป็นเชิงบวก กลาง หรือลบ',
+        th: 'NLP pipeline ที่อ่านรีวิวร้านอาหารจาก Yelp 10,000 รีวิว แล้วจัดแต่ละรีวิวเป็นเชิงบวก เป็นกลาง หรือเชิงลบ',
       },
       sections: [
         { h: { en: 'Overview', th: 'ภาพรวม' },
           p: {
             en: 'Restaurants receive far more reviews than anyone can read. This project trains a classifier on 10,000 English Yelp restaurant reviews to label each one positive, neutral or negative, and ships it as a small app for single or batch predictions.',
-            th: 'ร้านอาหารได้รีวิวมากเกินกว่าที่ใครจะอ่านไหว โปรเจกต์นี้เทรน classifier บนรีวิวภาษาอังกฤษจาก Yelp 10,000 รีวิว ให้จัดเป็นบวก กลาง หรือลบ แล้วส่งมอบเป็นแอปเล็ก ๆ ที่ทำนายได้ทั้งทีละรีวิวและทีละหลายรีวิว',
+            th: 'ร้านอาหารได้รีวิวมากเกินกว่าที่ใครจะอ่านไหว โปรเจกต์นี้เทรน classifier บนรีวิวภาษาอังกฤษจาก Yelp 10,000 รีวิว ให้จัดเป็นเชิงบวก เป็นกลาง หรือเชิงลบ แล้วส่งมอบเป็นแอปเล็ก ๆ ที่ทำนายได้ทั้งทีละรีวิวและทีละหลายรีวิว',
           } },
         { h: { en: 'Approach', th: 'วิธีทำ' },
           items: {
@@ -272,7 +272,7 @@
             ],
             th: [
               'แปลงรีวิวเป็น feature แบบ TF-IDF',
-              'เปรียบเทียบ Naive Bayes, Logistic Regression, SVM และแบบ class-balanced เลือกโมเดลสุดท้ายด้วย macro F1 เพื่อให้คลาส "กลาง" ที่มีน้อยมีน้ำหนักเท่าคลาสอื่น',
+              'เปรียบเทียบ Naive Bayes, Logistic Regression, SVM และรุ่นที่ปรับ class-balanced แล้วเลือกโมเดลสุดท้ายด้วย macro F1 เพื่อให้คลาส "เป็นกลาง" ที่มีจำนวนน้อยได้น้ำหนักเท่าคลาสอื่น',
               'จูน hyperparameter ด้วย cross-validation',
               'วิเคราะห์ความผิดพลาดด้วย confusion matrix และ F1 รายคลาส เพื่อรับมือกับข้อมูลไม่สมดุล',
               'ได้ accuracy 84.1% บนชุดทดสอบ',
@@ -281,13 +281,13 @@
         { h: { en: 'The app', th: 'ตัวแอป' },
           p: {
             en: 'The app has three parts: Analyze scores a single review and shows the probability for each class; Batch scores one review per line and summarises the distribution; Model report carries the training diagnostics — class balance, model comparison, word clouds per class and per-class F1.',
-            th: 'แอปมี 3 ส่วน: Analyze ให้คะแนนทีละรีวิวพร้อมความน่าจะเป็นของแต่ละคลาส, Batch ให้คะแนนบรรทัดละรีวิวแล้วสรุปการกระจาย และ Model report แสดงผลวินิจฉัยการเทรน — สมดุลคลาส การเทียบโมเดล word cloud รายคลาส และ F1 รายคลาส',
+            th: 'แอปมี 3 ส่วน: Analyze ให้คะแนนทีละรีวิวพร้อมความน่าจะเป็นของแต่ละคลาส, Batch ให้คะแนนหลายรีวิวพร้อมกัน (บรรทัดละรีวิว) แล้วสรุปสัดส่วน และ Model report แสดงผลการเทรน — สมดุลคลาส การเทียบโมเดล word cloud รายคลาส และ F1 รายคลาส',
           } },
       ],
       gallery: [
-        { src: 'sentiment-batch', cap: { en: 'Batch mode: every line scored, with the distribution summarised', th: 'โหมด Batch: ให้คะแนนทุกบรรทัด พร้อมสรุปการกระจาย' } },
+        { src: 'sentiment-batch', cap: { en: 'Batch mode: every line scored, with the distribution summarised', th: 'โหมด Batch: ให้คะแนนทุกบรรทัด พร้อมสรุปสัดส่วนแต่ละคลาส' } },
         { src: 'sentiment-report', cap: { en: 'Class balance of the corpus and accuracy/precision/recall/F1 across the three models', th: 'สมดุลคลาสของข้อมูล และ accuracy/precision/recall/F1 ของทั้งสามโมเดล' } },
-        { src: 'sentiment-wordclouds', cap: { en: 'Most frequent lemmas per class, and per-class F1 — neutral is the hard class', th: 'คำที่พบบ่อยที่สุดในแต่ละคลาส และ F1 รายคลาส — คลาส "กลาง" ยากที่สุด' } },
+        { src: 'sentiment-wordclouds', cap: { en: 'Most frequent lemmas per class, and per-class F1 — neutral is the hard class', th: 'คำที่พบบ่อยที่สุดในแต่ละคลาส และ F1 รายคลาส — คลาส "เป็นกลาง" ทายยากที่สุด' } },
       ],
     },
     /* ------------------------------------------------------------ */
@@ -335,7 +335,7 @@
         { h: { en: 'What I found', th: 'สิ่งที่ค้นพบ' },
           p: {
             en: 'The most useful result was that footfall and revenue do not move together. Ranking event formats by revenue per day against average daily footfall separates them clearly:',
-            th: 'ผลที่มีประโยชน์ที่สุดคือ จำนวนคนเดินกับรายได้ไม่ได้ขยับไปด้วยกัน เมื่อจัดอันดับรูปแบบงานด้วยรายได้ต่อวันเทียบกับคนเดินเฉลี่ยต่อวัน จะแยกกันชัดเจน:',
+            th: 'ผลที่มีประโยชน์ที่สุดคือ จำนวนคนเดินกับรายได้ไม่ได้ขยับไปด้วยกัน เมื่อเทียบรายได้ต่อวันกับจำนวนคนเดินเฉลี่ยต่อวันของแต่ละรูปแบบงาน จะเห็นความต่างชัดเจน:',
           },
           items: {
             en: [
@@ -345,7 +345,7 @@
               'Revenue is spread evenly across regions — Europe leads at 89M, Asia-Pacific trails at 73M — so the opportunity is in format, not geography.',
             ],
             th: [
-              'Flash Event ทำรายได้ต่อวันสูงสุด (~4.2K) ทั้งที่คนเดินน้อยที่สุดกลุ่มหนึ่ง — งานสั้นและกระชับ convert ดีที่สุด',
+              'Flash Event ทำรายได้ต่อวันสูงสุด (~4.2K) ทั้งที่คนเดินน้อยที่สุดกลุ่มหนึ่ง — งานสั้นและกระชับเปลี่ยนคนเดินเป็นยอดขายได้ดีที่สุด',
               'Mall Kiosk มีคนเดินมากที่สุด แต่รายได้ต่อวันน้อยที่สุด การไล่ตามจำนวนคนอย่างเดียวจึงไม่ใช่เป้าที่ดี',
               'แยกตามประเภททำเล Art/Design District นำด้วยรายได้ต่อวัน 4.5K ตามด้วย Luxury Mall 3.7K',
               'รายได้กระจายตัวเท่า ๆ กันทุกภูมิภาค — ยุโรปนำที่ 89M เอเชียแปซิฟิกตามหลังที่ 73M — โอกาสจึงอยู่ที่รูปแบบงาน ไม่ใช่ภูมิศาสตร์',
@@ -354,11 +354,11 @@
         { h: { en: 'Deliverable', th: 'สิ่งที่ส่งมอบ' },
           p: {
             en: 'An executive-ready Power BI dashboard: KPI cards across the top, then brand, region, location-type and event-format breakdowns, plus a monthly revenue trend with a date slicer. The trend page carries a note that the final months are incomplete, so the drop at the end is not read as falling sales.',
-            th: 'Power BI dashboard พร้อมนำเสนอผู้บริหาร: การ์ด KPI ด้านบน ตามด้วยการแจกแจงตามแบรนด์ ภูมิภาค ประเภททำเล และรูปแบบงาน พร้อมกราฟแนวโน้มรายได้รายเดือนที่มีตัวกรองวันที่ หน้ากราฟมีหมายเหตุว่าเดือนท้าย ๆ ข้อมูลยังไม่ครบ เพื่อไม่ให้ช่วงที่ลดลงถูกอ่านว่ายอดขายตก',
+            th: 'Power BI dashboard พร้อมนำเสนอผู้บริหาร: การ์ด KPI ด้านบน ตามด้วยกราฟแยกตามแบรนด์ ภูมิภาค ประเภททำเล และรูปแบบงาน พร้อมกราฟแนวโน้มรายได้รายเดือนที่มีตัวกรองวันที่ หน้ากราฟมีหมายเหตุว่าเดือนท้าย ๆ ข้อมูลยังไม่ครบ เพื่อไม่ให้ใครเข้าใจผิดว่ายอดขายตก',
           } },
       ],
       gallery: [
-        { src: 'popup-revenue-trend', cap: { en: 'Monthly revenue trend, annotated so incomplete months are not mistaken for a decline', th: 'แนวโน้มรายได้รายเดือน พร้อมหมายเหตุไม่ให้เดือนที่ข้อมูลไม่ครบถูกเข้าใจว่ายอดตก' } },
+        { src: 'popup-revenue-trend', cap: { en: 'Monthly revenue trend, annotated so incomplete months are not mistaken for a decline', th: 'แนวโน้มรายได้รายเดือน พร้อมหมายเหตุว่าเดือนท้าย ๆ ข้อมูลยังไม่ครบ ไม่ใช่ยอดตก' } },
       ],
     },
 
@@ -386,7 +386,7 @@
         { h: { en: 'Overview', th: 'ภาพรวม' },
           p: {
             en: 'Anime image generators are almost all subscription websites: they charge per image, queue your work behind other people’s, and keep the whole pipeline on their servers. The people who most want this — hobbyist artists and doujin creators — often already own a capable graphics card sitting idle. Genga Studio is the other shape: buy it once, install it, and everything renders on your own machine.',
-            th: 'เครื่องมือสร้างภาพอนิเมะแทบทั้งหมดเป็นเว็บแบบสมัครสมาชิก: คิดเงินต่อภาพ ให้รอคิวต่อจากคนอื่น และเก็บทั้ง pipeline ไว้บนเซิร์ฟเวอร์ของตัวเอง แต่คนที่อยากใช้มากที่สุด — นักวาดสมัครเล่นและคนทำโดจิน — มักมีการ์ดจอแรง ๆ วางอยู่เฉย ๆ แล้ว Genga Studio จึงเป็นอีกแบบ: ซื้อครั้งเดียว ติดตั้ง แล้วเรนเดอร์ทุกอย่างบนเครื่องตัวเอง',
+            th: 'เครื่องมือสร้างภาพอนิเมะแทบทั้งหมดเป็นเว็บแบบสมัครสมาชิก: คิดเงินต่อภาพ ให้รอคิวต่อจากคนอื่น และเก็บทั้ง pipeline ไว้บนเซิร์ฟเวอร์ของตัวเอง แต่คนที่อยากใช้มากที่สุด — นักวาดสมัครเล่นและคนทำโดจิน — มักมีการ์ดจอแรง ๆ อยู่แล้วแต่ไม่ได้ใช้ Genga Studio จึงเลือกอีกทาง: ซื้อครั้งเดียว ติดตั้ง แล้วเรนเดอร์ทุกอย่างบนเครื่องตัวเอง',
           } },
         { h: { en: 'My part', th: 'ส่วนที่ผมทำ' },
           p: { en: 'A solo project — I designed and built every part of it:', th: 'ทำคนเดียว — ออกแบบและสร้างทุกส่วนเอง:' },
@@ -399,7 +399,7 @@
             ],
             th: [
               'หน้าจอด้วย Next.js และ service FastAPI ด้านหลังที่แปลงแต่ละคำขอเป็นงานให้ engine เรนเดอร์ แล้ว stream ความคืบหน้ากลับมา',
-              'ตัวติดตั้งที่สมมติว่าเครื่องว่างเปล่า: พก Python และ Node มาเอง ดาวน์โหลด engine และโมเดลราว 15 GB และทำต่อจากจุดเดิมได้ถ้าโดนขัดจังหวะ ไม่แตะส่วนอื่นของระบบ ถอนการติดตั้งแค่ลบโฟลเดอร์เดียว',
+              'ตัวติดตั้งที่ไม่ต้องมีอะไรในเครื่องมาก่อน: พก Python และ Node มาเอง ดาวน์โหลด engine และโมเดลราว 15 GB และทำต่อจากจุดเดิมได้ถ้าติดตั้งสะดุดกลางทาง ไม่แตะส่วนอื่นของระบบ ถอนการติดตั้งแค่ลบโฟลเดอร์เดียว',
               'ระบบบัญชีและล็อกอินที่อยู่บนเครื่องลูกค้าเอง แล้วตรวจความปลอดภัยกับระบบที่รันอยู่จริง ไม่ใช่แค่บนกระดาษ',
               'ปรับประสิทธิภาพคลังภาพ จากเดิมส่ง 29 MB เพื่อวาด thumbnail หน้าเดียว เหลือ 0.69 MB',
             ],
@@ -448,7 +448,7 @@
       year: 2025, status: 'done', color: '#fad0b5',
       cover: 'pos-shabu',
       kind: { en: 'System analysis & backend', th: 'System analysis และ backend' },
-      role: { en: 'System analysis & backend', th: 'วิเคราะห์ระบบ และ backend' },
+      role: { en: 'System analysis & backend', th: 'วิเคราะห์ระบบและพัฒนา backend' },
       github: 'https://github.com/suphakit085/pos-hana',
       stack: ['Next.js', 'TypeScript', 'Prisma', 'MySQL', 'REST API', 'UML', 'Postman'],
       metric: { en: '5 modules · 3 UML types', th: '5 โมดูล · UML 3 แบบ' },
@@ -460,13 +460,13 @@
       ],
       summary: {
         en: 'A point-of-sale and management system for a shabu restaurant: in-store sales, table reservations and QR-code ordering. I did the system analysis and built the backend.',
-        th: 'ระบบขายหน้าร้านและบริหารร้านชาบู: ขายหน้าร้าน จองโต๊ะ และสั่งอาหารผ่าน QR code — ผมทำ system analysis และสร้าง backend',
+        th: 'ระบบ POS และบริหารร้านชาบู: ขายหน้าร้าน จองโต๊ะ และสั่งอาหารผ่าน QR code — ผมทำ system analysis และสร้าง backend',
       },
       sections: [
         { h: { en: 'Overview', th: 'ภาพรวม' },
           p: {
             en: 'A shabu restaurant needs one system that runs the whole shift: customers order from a QR code at their table, staff manage reservations and table status, the kitchen sees orders as they come in, and the cashier settles the bill and prints a receipt. This project built that system end to end as a Next.js web application on a MySQL database.',
-            th: 'ร้านชาบูต้องการระบบเดียวที่ดูแลทั้งกะ: ลูกค้าสั่งอาหารผ่าน QR ที่โต๊ะ พนักงานจัดการการจองและสถานะโต๊ะ ครัวเห็นออเดอร์ทันทีที่เข้ามา และแคชเชียร์เก็บเงินพร้อมพิมพ์ใบเสร็จ โปรเจกต์นี้สร้างระบบนั้นครบวงจรเป็นเว็บแอป Next.js บนฐานข้อมูล MySQL',
+            th: 'ร้านชาบูต้องการระบบเดียวที่รองรับงานทั้งกะ: ลูกค้าสั่งอาหารผ่าน QR ที่โต๊ะ พนักงานจัดการการจองและสถานะโต๊ะ ครัวเห็นออเดอร์ทันทีที่เข้ามา และแคชเชียร์เก็บเงินพร้อมพิมพ์ใบเสร็จ โปรเจกต์นี้สร้างระบบนั้นครบวงจรเป็นเว็บแอป Next.js บนฐานข้อมูล MySQL',
           } },
         { h: { en: 'My part', th: 'ส่วนที่ผมทำ' },
           p: { en: 'I was responsible for the system analysis and the backend:', th: 'ผมรับผิดชอบการวิเคราะห์ระบบและ backend:' },
@@ -479,8 +479,8 @@
             ],
             th: [
               'เก็บและเขียนเอกสาร functional requirement ของการสั่งอาหาร การจัดการโต๊ะ สต็อก พนักงาน และการชำระเงิน',
-              'จำลองระบบด้วย Use Case, Sequence และ Class diagram',
-              'แปลงแบบจำลองเป็นการออกแบบฐานข้อมูล MySQL และ REST API spec แล้วพัฒนา API ด้วย Next.js',
+              'ออกแบบระบบด้วย Use Case, Sequence และ Class diagram',
+              'นำ diagram มาออกแบบฐานข้อมูล MySQL และเขียน REST API spec แล้วพัฒนา API ด้วย Next.js',
               'ทดสอบทุก workflow ด้วย Postman เทียบกับ requirement ที่เขียนไว้',
             ],
           } },

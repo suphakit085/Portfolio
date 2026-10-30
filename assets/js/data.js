@@ -22,11 +22,11 @@
       status: { en: 'Open to co-op & internship', th: 'เปิดรับ Co-op & Internship' },
       intro: {
         en: 'Fourth-year Computer Science student at Khon Kaen University, focused on AI and data — RAG systems that cite their sources, machine-learning models tested on data they have never seen, and dashboards executives can decide from. A business-analysis background helps me pin down the question before I touch the data.',
-        th: 'นักศึกษา Computer Science ปี 4 มหาวิทยาลัยขอนแก่น สาย AI และ Data — สร้างระบบ RAG ที่อ้างอิงแหล่งที่มาได้ โมเดล machine learning ที่ทดสอบกับข้อมูลที่ไม่เคยเห็น และ dashboard ที่ผู้บริหารใช้ตัดสินใจได้จริง พื้นฐาน business analysis ช่วยให้ผมเข้าใจโจทย์ก่อนลงมือกับข้อมูล',
+        th: 'นักศึกษา Computer Science ปี 4 มหาวิทยาลัยขอนแก่น สาย AI และ Data ผมสร้างระบบ RAG ที่อ้างอิงแหล่งที่มาได้ เทรนโมเดล machine learning ที่วัดผลกับข้อมูลที่โมเดลไม่เคยเห็น และทำ dashboard ที่ผู้บริหารใช้ตัดสินใจได้จริง โดยมีพื้นฐาน business analysis ช่วยให้เข้าใจโจทย์ก่อนลงมือกับข้อมูล',
       },
       story: {
         en: 'During my internship as a Data Scientist at NAYOO Corporation I prepared the location data behind a land-price model, and designed a road-distance algorithm so accessibility was measured along real roads instead of straight lines. Since then I have built RAG systems that cite every source, trained models that are scored only on data they have never seen, and taken 300,000 credit records through feature engineering to a working LightGBM app. One rule runs through all of it: every number has to be checkable.',
-        th: 'ระหว่างฝึกงานเป็น Data Scientist ที่ NAYOO Corporation ผมเตรียมข้อมูลทำเลให้โมเดลราคาที่ดิน และออกแบบอัลกอริทึมวัดระยะทาง ตามถนนจริง แทนเส้นตรง หลังจากนั้นผมสร้างระบบ RAG ที่อ้างอิงแหล่งที่มาได้ทุกจุด เทรนโมเดลที่วัดผลกับข้อมูลที่ไม่เคยเห็นเท่านั้น และพาข้อมูลเครดิต 300,000 แถว ผ่าน feature engineering จนเป็นแอป LightGBM ที่ใช้งานได้จริง กฎข้อเดียวที่ผมยึดทุกโปรเจกต์คือ ตัวเลขทุกตัวต้องตรวจสอบได้',
+        th: 'ระหว่างฝึกงานเป็น Data Scientist ที่ NAYOO Corporation ผมเตรียมข้อมูลทำเลให้โมเดลราคาที่ดิน และออกแบบอัลกอริทึมวัดระยะทาง ตามถนนจริง แทนเส้นตรง หลังจากนั้นผมสร้างระบบ RAG ที่อ้างอิงแหล่งที่มาได้ทุกจุด เทรนโมเดลโดยวัดผลกับข้อมูลที่โมเดลไม่เคยเห็นเท่านั้น และทำ feature engineering กับข้อมูลเครดิต 300,000 แถว จนออกมาเป็นแอป LightGBM ที่ใช้งานได้จริง สิ่งที่ผมยึดในทุกโปรเจกต์คือ ตัวเลขทุกตัวต้องตรวจสอบได้',
       },
       trust: { en: '7 projects · all completed', th: '7 โปรเจกต์ · เสร็จสมบูรณ์ทั้งหมด' },
       looking: {
@@ -80,7 +80,7 @@
           title: { en: 'Why must the numbers come from code?', th: 'ทำไมตัวเลขต้องคำนวณด้วยโค้ด?' },
           body: {
             en: 'In NutriLift, BMR, TDEE and macro formulas live in tested Python functions the model calls as tools — so the figures cannot be invented.',
-            th: 'ใน NutriLift สูตร BMR, TDEE และ macro อยู่ในฟังก์ชัน Python ที่มี test ครอบ โมเดลแค่เรียกใช้เป็น tool — ตัวเลขเลยแต่งขึ้นเองไม่ได้',
+            th: 'ใน NutriLift สูตร BMR, TDEE และ macro อยู่ในฟังก์ชัน Python ที่มี test ครอบ โมเดลแค่เรียกใช้เป็น tool — จึงแต่งตัวเลขเองไม่ได้',
           },
         },
         skills: ['Gemini API', 'pgvector', 'Qdrant', 'BGE-M3', 'Cross-encoder rerank', 'FastAPI', 'pytest'],
@@ -90,11 +90,11 @@
         headline: 'ML · Classification & NLP',
         bio: {
           en: 'Picking models by the metric that fits the problem, splitting data honestly, and turning models into apps other people can use.',
-          th: 'เลือกโมเดลจาก metric ที่ตรงโจทย์ แบ่งข้อมูลอย่างซื่อตรง และแปลงโมเดลเป็นแอปให้คนอื่นใช้ได้',
+          th: 'เลือกโมเดลด้วย metric ที่ตรงโจทย์ แบ่ง train/test ไม่ให้ผลดูดีเกินจริง และทำโมเดลออกมาเป็นแอปที่คนอื่นใช้ได้',
         },
         banner: { text: 'MODEL THE SIGNAL', bg: 'linear-gradient(135deg,#3b1d06,#d97706 55%,#fde68a)' },
         tags: ['XGBoost', 'LightGBM', 'TF-IDF'],
-        stats: [['0.81', 'F1 (illicit)'], ['90.5%', 'Precision'], ['84.1%', 'Accuracy'], ['300K', 'Credit records']],
+        stats: [['0.81', { en: 'F1 (illicit)', th: 'F1 (ธุรกรรมผิดกฎหมาย)' }], ['90.5%', 'Precision'], ['84.1%', 'Accuracy'], ['300K', { en: 'Credit records', th: 'แถวข้อมูลเครดิต' }]],
         works: ['crypto-fraud', 'review-sentiment', 'thai-law-rag'],
         note: {
           title: { en: 'Split by time, not at random', th: 'แบ่งข้อมูลตามเวลา ไม่ใช่สุ่ม' },
@@ -114,13 +114,13 @@
         },
         banner: { text: 'CLEAR DECISIONS', bg: 'linear-gradient(135deg,#042f2e,#0d9488 55%,#99f6e4)' },
         tags: ['Power BI', 'SQL', 'Geospatial'],
-        stats: [['398.74M', 'Total revenue'], ['73.4%', 'Sell-through'], ['2.93%', 'Conversion'], ['Dijkstra', 'Road distance']],
+        stats: [['398.74M', { en: 'Total revenue', th: 'รายได้รวม' }], ['73.4%', 'Sell-through'], ['2.93%', 'Conversion'], ['Dijkstra', { en: 'Road distance', th: 'ระยะทางตามถนน' }]],
         works: ['popup-analytics', 'crypto-fraud', 'review-sentiment'],
         note: {
           title: { en: 'More footfall ≠ more sales', th: 'คนเดินเยอะ ≠ ขายได้เยอะ' },
           body: {
             en: 'Popup Analytics found flash events earn the most per day on the lowest traffic, mall kiosks the opposite — and flagged the incomplete final months so they are not read as a decline.',
-            th: 'Popup Analytics พบว่างาน flash event ทำรายได้ต่อวันสูงสุดทั้งที่คนน้อยที่สุด ส่วน mall kiosk กลับตรงข้าม — และกำกับเดือนท้ายที่ข้อมูลไม่ครบ ไม่ให้ถูกอ่านเป็นยอดตก',
+            th: 'Popup Analytics พบว่างาน flash event ทำรายได้ต่อวันสูงสุดทั้งที่คนน้อยที่สุด ส่วน mall kiosk กลับตรงข้าม — และใส่หมายเหตุเดือนท้ายที่ข้อมูลยังไม่ครบ ไม่ให้ใครเข้าใจผิดว่ายอดตก',
           },
         },
         skills: ['Python', 'pandas', 'SQL', 'Power BI', 'Excel', 'Statistics', 'Road-network graphs'],
@@ -134,7 +134,7 @@
         },
         banner: { text: 'SHIP THE MODEL', bg: 'linear-gradient(135deg,#2e1065,#7c3aed 55%,#f0abfc)' },
         tags: ['ComfyUI', 'FastAPI', 'Next.js'],
-        stats: [['−98%', 'Gallery payload'], ['~36s', 'Render time'], ['5', 'POS modules'], ['15 GB', 'Auto install']],
+        stats: [['−98%', { en: 'Gallery payload', th: 'ขนาดข้อมูลแกลเลอรี' }], ['~36s', { en: 'Render time', th: 'เวลาเรนเดอร์ต่อภาพ' }], ['12,000', { en: 'Autocomplete tags', th: 'แท็ก autocomplete' }], ['15 GB', { en: 'Models auto-installed', th: 'โมเดลที่ติดตั้งอัตโนมัติ' }]],
         works: ['genga-studio', 'nutrilift', 'thai-law-rag'],
         note: {
           title: { en: '29 MB → 0.69 MB', th: '29 MB → 0.69 MB' },
@@ -154,7 +154,7 @@
         },
         banner: { text: 'REQUIREMENTS FIRST', bg: 'linear-gradient(135deg,#450a0a,#e11d48 55%,#fecdd3)' },
         tags: ['UML', 'ER Diagram', 'Agile / Scrum'],
-        stats: [['5', 'Modules'], ['3', 'UML types'], ['REST', 'API spec'], ['UAT', 'Tested']],
+        stats: [['5', { en: 'Modules', th: 'โมดูล' }], ['3', { en: 'UML diagram types', th: 'แผนภาพ UML' }], ['REST', 'API spec'], ['Postman', { en: 'Every workflow tested', th: 'ทดสอบทุก workflow' }]],
         works: ['pos-shabu', 'popup-analytics', 'nutrilift'],
         note: {
           title: { en: 'From requirements to API', th: 'จาก requirement ถึง API' },
@@ -171,7 +171,7 @@
     notes: [
       { text: { en: 'AI making up nutrition numbers?', th: 'AI ตอบตัวเลขโภชนาการมั่ว?' }, slug: 'nutrilift', color: '#c5e5c0' },
       { text: { en: 'Thai has no spaces — keyword search misses everything?', th: 'ภาษาไทยไม่มีเว้นวรรค ค้นด้วย keyword ไม่เจอ?' }, slug: 'thai-law-rag', color: '#a3e0ef' },
-      { text: { en: 'A gallery loading 29 MB at a time..', th: 'แกลเลอรีโหลดทีละ 29 MB..' }, slug: 'genga-studio', color: '#eccef3' },
+      { text: { en: 'A gallery loading 29 MB at a time…', th: 'แกลเลอรีโหลดทีละ 29 MB..' }, slug: 'genga-studio', color: '#eccef3' },
       { text: { en: '94% accuracy — while catching zero fraud?', th: 'Accuracy 94% แต่จับโกงไม่ได้สักรายการ?' }, slug: 'crypto-fraud', color: '#f8da9d' },
       { text: { en: 'AI citing law sections that don’t exist?', th: 'AI อ้างมาตรากฎหมายที่ไม่มีอยู่จริง?' }, slug: 'thai-law-rag', color: '#fad0b5' },
       { text: { en: 'Lots of footfall, so why so few sales?', th: 'คนเดินเยอะ แต่ทำไมยอดขายน้อย?' }, slug: 'popup-analytics', color: '#a5e3d6' },
@@ -191,7 +191,7 @@
             'Designed an algorithm that measures how far each land parcel is from a major road along the actual roads (Dijkstra’s shortest path), rather than in a straight line.',
           ],
           th: [
-            'เก็บและทำความสะอาดข้อมูลสถานที่ทั่วขอนแก่น (ร้านค้า โรงพยาบาล โรงเรียน สวน) แล้วจัดเป็นชั้นตามผลต่อราคาที่ดิน',
+            'เก็บและทำความสะอาดข้อมูลสถานที่ทั่วขอนแก่น (ร้านค้า โรงพยาบาล โรงเรียน สวนสาธารณะ) แล้วแบ่งกลุ่มตามระดับผลกระทบต่อราคาที่ดิน',
             'แยกโครงข่ายถนนเป็นถนนสายรองและสายหลัก เพื่อเตรียม feature ให้โมเดลราคาที่ดิน',
             'ออกแบบอัลกอริทึมวัดระยะจากแปลงที่ดินถึงถนนสายหลักตามถนนจริง (Dijkstra) แทนเส้นตรง',
           ],
@@ -201,14 +201,14 @@
       {
         kind: 'EDUCATION', big: 'B.Sc.', tone: 'yellow',
         title: 'B.Sc. Computer Science', org: 'Khon Kaen University',
-        where: { en: '2023 — 2027 (expected)', th: '2566 — 2570 (คาดว่าจบ)' },
+        where: { en: '2023 — 2027 (expected)', th: '2023 — 2027 (คาดว่าจบ)' },
         points: {
           en: [
             'Year 4, Faculty of Computer Science · GPA 3.03 · expected graduation 2027.',
             'Relevant coursework: Data Structures, Database Management Systems, Statistics, Data Analytics and Application, Neural Networks and Deep Learning, Software Engineering.',
           ],
           th: [
-            'ชั้นปีที่ 4 คณะวิทยาการคอมพิวเตอร์ · GPA 3.03 · คาดว่าจบปี 2027',
+            'ชั้นปีที่ 4 สาขาวิทยาการคอมพิวเตอร์ · GPA 3.03 · คาดว่าจบปี 2027',
             'วิชาที่เกี่ยวข้อง: Data Structures, Database Management Systems, Statistics, Data Analytics and Application, Neural Networks and Deep Learning, Software Engineering',
           ],
         },
@@ -226,8 +226,8 @@
 
     process: [
       [{ en: 'Frame the question', th: 'ตั้งโจทย์ให้ชัด' }, { en: 'Pin down the decision the data or model has to support', th: 'ระบุให้ชัดว่าข้อมูลหรือโมเดลต้องช่วยตัดสินใจเรื่องอะไร' }],
-      [{ en: 'Prepare the data', th: 'เตรียมข้อมูล' }, { en: 'Clean, join and engineer features — and split it honestly', th: 'ทำความสะอาด รวม และสร้าง feature — แล้วแบ่งข้อมูลอย่างซื่อตรง' }],
-      [{ en: 'Build', th: 'สร้างโมเดลและระบบ' }, { en: 'Models, RAG pipelines and the apps around them', th: 'โมเดล, RAG pipeline และแอปที่ครอบมันไว้' }],
+      [{ en: 'Prepare the data', th: 'เตรียมข้อมูล' }, { en: 'Clean, join and engineer features — and split it honestly', th: 'ทำความสะอาด รวมข้อมูล สร้าง feature แล้วแบ่ง train/test ไม่ให้ข้อมูลรั่วข้ามกัน' }],
+      [{ en: 'Build', th: 'สร้างโมเดลและระบบ' }, { en: 'Models, RAG pipelines and the apps around them', th: 'ทั้งโมเดล RAG pipeline และแอปที่ให้คนใช้งานจริง' }],
       [{ en: 'Measure', th: 'วัดผลจริง' }, { en: 'Test with the metric that fits the problem, not just “looks good”', th: 'ทดสอบด้วย metric ที่ตรงโจทย์ ไม่ใช่แค่ “ดูดี”' }],
     ],
   };
