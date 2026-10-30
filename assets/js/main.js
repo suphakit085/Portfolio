@@ -103,6 +103,8 @@
   const navList = $('#showcaseNav');
   const bar = $('#showcaseBar');
   track.style.setProperty('--n', cats.length);
+  // warm the cache for every banner once the page has settled, so switching categories never flashes
+  addEventListener('load', () => setTimeout(() => cats.forEach((c) => { if (c.banner.img) new Image().src = c.banner.img; }), 1200));
   let active = -1;
   let tab = 'works';
   const TABS = ['works', 'skills', 'exp', 'about'];
@@ -193,7 +195,7 @@
           <div class="pc-stats">${c.stats.map(([v, l]) => `<div><b>${esc(v)}</b><small>${esc(t(l))}</small></div>`).join('')}</div>
         </div>
         <div>
-          <div class="pc-banner" style="background:${c.banner.bg}"><small>~/suphakit/${c.key}</small><b>${esc(c.banner.text)}</b></div>
+          <div class="pc-banner${c.banner.img ? ' has-img' : ''}" style="background:${c.banner.bg}">${c.banner.img ? `<img src="${c.banner.img}" alt="" decoding="async">` : ''}<small>~/suphakit/${c.key}</small><b>${esc(c.banner.text)}</b></div>
           <div class="pc-tags"><div class="chips">${c.tags.map((x) => `<span class="chip">${esc(x)}</span>`).join('')}</div><span class="pc-loc">📍 ${esc(D.profile.location)}</span></div>
         </div>
       </div>
