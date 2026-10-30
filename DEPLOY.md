@@ -43,18 +43,16 @@
    - [ ] `/resume.pdf` เปิดได้
    - [ ] เปิดบนมือถือจริง 1 เครื่อง
    - [ ] DevTools → Console ไม่มี error สีแดง
-4. **เปิด Analytics** — project ใหม่ → แท็บ Analytics → Enable
-5. **สลับโดเมน** (ทำต่อกันทันที เว็บจะหายไปแค่ไม่กี่วินาทีถึง 1–2 นาที)
+4. **สลับโดเมน** (ทำต่อกันทันที เว็บจะหายไปแค่ไม่กี่วินาทีถึง 1–2 นาที)
    - project **เก่า** → Settings → Domains → Remove `suphakit.online` (และ `www.suphakit.online` ถ้ามี)
-   - project **ใหม่** → Settings → Domains → Add `suphakit.online` (+ `www` ให้ redirect มาที่ apex)
+   - project **ใหม่** → Settings → Domains → Add `suphakit.online` + `www.suphakit.online` (**เอาติ๊ก** "Redirect apex domains to www" **ออก**) แล้ว Edit `www` → Redirect to Another Domain → `suphakit.online` · 308
    - DNS ชี้ Vercel อยู่แล้ว ไม่ต้องแก้ DNS · SSL ออกให้อัตโนมัติ
-6. **ตรวจบนโดเมนจริง** — ทำ smoke test ข้อ 3 ซ้ำบน `https://suphakit.online`
+5. **ตรวจบนโดเมนจริง** — ทำ smoke test ข้อ 3 ซ้ำบน `https://suphakit.online`
 
 ## Post-Deploy
 
 - [ ] ล้าง cache ภาพแชร์ลิงก์: [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) และ [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) → ใส่ `https://suphakit.online/` แล้วกด scrape ใหม่
 - [ ] Google Search Console → Sitemaps → ส่ง `https://suphakit.online/sitemap.xml` และ Request indexing หน้าแรก
-- [ ] Vercel Analytics เริ่มมีข้อมูลภายใน 1 วัน
 - [ ] ติด tag เวอร์ชัน: `git tag v2.0 && git push --tags`
 - [ ] **เก็บ project เก่าไว้อย่างน้อย 2 สัปดาห์** (ห้ามลบ) เผื่อ rollback แล้วค่อย archive
 

@@ -117,7 +117,7 @@
 });
 
 /* =========================================================
-   Browser-only: language state, static text, nav, analytics
+   Browser-only: language state, static text, nav
    ========================================================= */
 if (typeof window !== 'undefined') (function () {
   const C = window.CORE;
@@ -156,7 +156,6 @@ if (typeof window !== 'undefined') (function () {
     if (u.searchParams.has('lang')) { u.searchParams.delete('lang'); history.replaceState(null, '', u); }
     C.applyStatic(lang);
     listeners.forEach((fn) => fn(lang));
-    if (window.va) window.va('event', { name: 'lang', data: { lang } });
   };
 
   document.addEventListener('click', (e) => {
@@ -170,15 +169,6 @@ if (typeof window !== 'undefined') (function () {
     const onScroll = () => nav.classList.toggle('is-pill', scrollY > 40);
     addEventListener('scroll', onScroll, { passive: true });
     onScroll();
-  }
-
-  /* Vercel Web Analytics — only on the deployed site */
-  if (!/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) && location.protocol === 'https:') {
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    const s = document.createElement('script');
-    s.defer = true;
-    s.src = '/_vercel/insights/script.js';
-    document.head.appendChild(s);
   }
 
   const y = document.getElementById('year');

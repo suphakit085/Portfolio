@@ -40,7 +40,6 @@ node scripts/check.js
 1. push โฟลเดอร์นี้ขึ้น GitHub repo
 2. Vercel → Add New Project → import repo → Framework Preset: **Other** (ไม่ต้องตั้ง build command)
 3. ย้ายโดเมน: project เก่า → Settings → Domains → ลบ `suphakit.online` แล้วไปเพิ่มใน project ใหม่
-4. เปิด Analytics: project ใหม่ → Analytics → Enable (สคริปต์ใส่ไว้แล้ว โหลดเฉพาะบนโดเมนจริง)
 
 URL เดิม `/projects/<slug>`, `/resume.pdf`, `/transcript.pdf` ยังใช้ได้เหมือนเดิม
 
@@ -48,7 +47,7 @@ URL เดิม `/projects/<slug>`, `/resume.pdf`, `/transcript.pdf` ยัง�
 ```
 index.html              หน้าแรก
 projects/<slug>/        หน้ารายละเอียด (สร้างโดย build.js)
-assets/js/core.js       i18n + helper + nav + analytics
+assets/js/core.js       i18n + helper + nav
 assets/js/data.js       ข้อมูลโปรไฟล์
 assets/js/projects.js   ข้อมูลโปรเจกต์
 assets/js/main.js       หน้าแรก: render + animation
