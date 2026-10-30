@@ -30,6 +30,12 @@ node build.js
 2. เพิ่ม object ใน `assets/js/projects.js` (copy อันเดิมไปแก้)
 3. `node build.js` แล้ว `python scripts/make_og.py` (ภาพแชร์ลิงก์, ต้องมี Pillow)
 
+## ตรวจก่อน deploy
+```
+node scripts/check.js
+```
+เช็กว่าหน้าที่ generate เป็นปัจจุบัน ลิงก์/รูปครบ ทุกหน้ามี SEO meta และไม่มี path ในเครื่องหลุดไป — ขั้นตอน deploy เต็ม ๆ อยู่ใน `DEPLOY.md`
+
 ## Deploy (Vercel)
 1. push โฟลเดอร์นี้ขึ้น GitHub repo
 2. Vercel → Add New Project → import repo → Framework Preset: **Other** (ไม่ต้องตั้ง build command)
