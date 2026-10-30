@@ -12,7 +12,7 @@
     {
       slug: 'nutrilift',
       title: 'NutriLift Chatbot',
-      year: 2026, status: 'progress', color: '#c5e5c0',
+      year: 2026, status: 'done', color: '#c5e5c0',
       cover: 'nutrilift-landing',
       coverCap: {
         en: 'The landing page states the promise — nutrition you can trace to a source — with an inline citation and a figure the model was not allowed to invent.',
@@ -90,7 +90,7 @@
     {
       slug: 'thai-law-rag',
       title: 'Thai Law RAG',
-      year: 2026, status: 'progress', color: '#c4ddfb',
+      year: 2026, status: 'done', color: '#c4ddfb',
       cover: 'lawrag-ask',
       kind: { en: 'Retrieval & evaluation', th: 'Retrieval และการวัดผล' },
       role: { en: 'Solo project — retrieval, evaluation pipeline and frontend', th: 'ทำคนเดียว — ระบบค้นหา, pipeline ประเมินคดี และ frontend' },
@@ -162,7 +162,7 @@
     {
       slug: 'genga-studio',
       title: 'Genga Studio',
-      year: 2026, status: 'progress', color: '#eccef3',
+      year: 2026, status: 'done', color: '#eccef3',
       cover: 'genga-landing',
       kind: { en: 'Product · desktop app', th: 'Product · แอปเดสก์ท็อป' },
       role: { en: 'Solo project — product, architecture, build and installer', th: 'ทำคนเดียว — product, สถาปัตยกรรม, พัฒนา และตัวติดตั้ง' },

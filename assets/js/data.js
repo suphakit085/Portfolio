@@ -28,7 +28,7 @@
         en: 'During my internship as a Data Scientist at NAYOO Corporation I prepared the location data behind a land-price model, and designed a road-distance algorithm so accessibility was measured along real roads instead of straight lines. I enjoy following a problem from start to finish — writing the requirements and UML for a restaurant POS and then building its database and API, or taking 300,000 credit records through feature engineering to a working app.',
         th: 'ระหว่างฝึกงานเป็น Data Scientist ที่ NAYOO Corporation ผมเตรียมข้อมูลทำเลให้โมเดลราคาที่ดิน และออกแบบอัลกอริทึมวัดระยะทาง ตามถนนจริง แทนเส้นตรง ผมชอบตามโจทย์ ตั้งแต่ต้นจนจบ ตั้งแต่เขียน requirement และ UML ของระบบ POS ไปจนถึงสร้างฐานข้อมูลและ API หรือพาข้อมูลเครดิต 300,000 แถว ผ่าน feature engineering จนเป็นแอปที่ใช้งานได้จริง',
       },
-      trust: { en: '7 projects · 3 in progress · 4 completed', th: '7 โปรเจกต์ · 3 กำลังพัฒนา · 4 เสร็จสมบูรณ์' },
+      trust: { en: '7 projects · all completed', th: '7 โปรเจกต์ · เสร็จสมบูรณ์ทั้งหมด' },
       looking: {
         en: 'A co-op placement in data or business analysis, where both sides of my work are useful.',
         th: 'ตำแหน่ง Co-op ด้าน Data หรือ Business Analysis ที่ได้ใช้ทั้งสองฝั่งร่วมกัน',
