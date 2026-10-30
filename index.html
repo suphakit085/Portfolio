@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Suphakit Kaeokaemthong · Portfolio</title>
+  <meta name="description" content="Computer Science student at Khon Kaen University working across software engineering, data science and business analysis. 7 projects in RAG, ML, full-stack and BI." />
+  <meta name="author" content="Suphakit Kaeokaemthong" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="canonical" href="https://suphakit.online/" />
+
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Suphakit Kaeokaemthong" />
+  <meta property="og:title" content="Suphakit Kaeokaemthong · Portfolio" />
+  <meta property="og:description" content="Turning messy data into clear decisions — CS student at Khon Kaen University, open to co-op & internship." />
+  <meta property="og:url" content="https://suphakit.online/" />
+  <meta property="og:image" content="https://suphakit.online/assets/og/og-home.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="th_TH" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://suphakit.online/assets/og/og-home.jpg" />
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/img/portrait.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playpen+Sans:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Suphakit Kaeokaemthong",
+    "alternateName": "suphakit085",
+    "url": "https://suphakit.online/",
+    "image": "https://suphakit.online/assets/img/portrait.jpg",
+    "email": "mailto:suphakit.kae@kkumail.com",
+    "jobTitle": "Computer Science Student · Data & Business Analysis",
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Khon Kaen University" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Khon Kaen", "addressCountry": "TH" },
+    "knowsAbout": ["Business Analysis", "Data Science", "Machine Learning", "Retrieval-Augmented Generation", "Python", "SQL", "Power BI", "Next.js", "FastAPI"],
+    "sameAs": ["https://github.com/suphakit085"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#work">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav-bar">
+      <a class="nav-logo" href="/" data-i18n-attr="aria-label:nav.home" aria-label="Back to home">
+        <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><circle cx="11" cy="11" r="6" fill="currentColor"/><circle cx="21" cy="21" r="6" fill="none" stroke="currentColor" stroke-width="3"/><path d="M15.5 16.5l1-1" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+        <span>suphakit<span class="muted">085</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <span class="status-pill"><i class="dot"></i><span data-bind="status">Open to co-op &amp; internship</span></span>
+        <button class="lang-toggle" type="button" data-i18n-attr="aria-label:nav.lang" aria-label="Switch language">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span data-l="th">TH</span><span data-l="en" class="on">EN</span>
+        </button>
+        <a class="btn btn-dark btn-sm" data-href="resume" href="/resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero-cards" id="heroCards" aria-hidden="true"></div>
+
+      <div class="hero-copy">
+        <h1 id="hero-title" class="hero-title" data-i18n-html="hero.title"><span class="line">Turning messy data</span><span class="line">into clear decisions</span></h1>
+        <p class="hero-sub" data-bind="intro"></p>
+
+        <div class="stat-chips" id="heroStats"></div>
+
+        <div class="hero-cta">
+          <a class="btn btn-glow" href="#work"><span data-i18n="hero.cta">See my work</span></a>
+          <a class="btn btn-line" href="#contact" data-i18n="hero.cta2">Get in touch</a>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#story">
+        <span class="mouse"><i></i></span>
+        <span data-i18n="hero.scroll">Scroll</span>
+      </a>
+    </section>
+
+    <!-- ============ STATEMENT ============ -->
+    <section class="story" id="story" aria-labelledby="story-title">
+      <h2 id="story-title" class="story-title" data-i18n-html="story.title">In the end, teams still need people</h2>
+      <p class="story-text" id="storyText"></p>
+    </section>
+
+    <!-- ============ SHOWCASE ============ -->
+    <section class="showcase" id="work" aria-labelledby="work-title">
+      <h2 id="work-title" class="sr-only" data-i18n="nav.work">Work</h2>
+      <div class="showcase-track" id="showcaseTrack">
+        <div class="showcase-sticky">
+          <div class="showcase-side">
+            <span class="eyebrow" data-i18n="work.eyebrow">Work · 7 projects</span>
+            <ol class="showcase-nav" id="showcaseNav"></ol>
+            <div class="showcase-progress"><i id="showcaseBar"></i></div>
+          </div>
+          <div class="profile-card" id="profileCard"></div>
+        </div>
+      </div>
+      <div class="trust-bar">
+        <div class="avatar-stack" id="trustAvatars"></div>
+        <span data-bind="trust"></span>
+        <a class="btn btn-dark btn-sm" data-href="githubRepos" target="_blank" rel="noopener" data-i18n="work.github">View on GitHub</a>
+      </div>
+    </section>
+
+    <!-- ============ PROBLEMS / STICKY NOTES ============ -->
+    <section class="pain" id="pain" aria-labelledby="pain-title">
+      <div class="pain-head">
+        <h2 id="pain-title" data-i18n="pain.title">So much data, still no decision..</h2>
+        <p data-i18n="pain.sub">These are exactly the problems I like to solve</p>
+      </div>
+      <div class="notes" id="notes"></div>
+      <p class="pain-hint" data-i18n="pain.hint">✦ Go on, drag the notes around</p>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="experience" id="experience" aria-labelledby="exp-title">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="exp.eyebrow">Experience &amp; education</span>
+        <h2 id="exp-title" data-i18n-html="exp.title">From the classroom to real work</h2>
+        <p data-i18n="exp.sub"></p>
+      </div>
+      <div class="exp-grid" id="expGrid"></div>
+      <div class="looking reveal">
+        <div>
+          <span class="eyebrow" data-i18n="exp.looking">Looking for</span>
+          <h3 data-bind="looking"></h3>
+        </div>
+        <a class="btn btn-dark" href="#contact" data-i18n="exp.cta">Invite me to your team</a>
+      </div>
+    </section>
+
+    <!-- ============ BENTO ============ -->
+    <section class="bento-wrap" id="skills" aria-labelledby="bento-title">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="skills.eyebrow">Skills &amp; how I work</span>
+        <h2 id="bento-title" data-i18n-html="skills.title">Business side and data side — I cover both</h2>
+      </div>
+      <div class="bento">
+        <article class="tile tile-stack reveal">
+          <h3 data-i18n-html="skills.stack"></h3>
+          <div class="marquee" id="stackRows"></div>
+        </article>
+
+        <article class="tile tile-orders reveal">
+          <h3 data-i18n-html="skills.orders"></h3>
+          <ul class="orders" id="orders"></ul>
+        </article>
+
+        <article class="tile tile-process reveal">
+          <h3 data-i18n-html="skills.process"></h3>
+          <ol class="process" id="process"></ol>
+        </article>
+
+        <article class="tile tile-fast reveal">
+          <div class="big-num">24<small data-i18n="skills.fastUnit">hrs</small></div>
+          <h3 data-i18n-html="skills.fast"></h3>
+          <p data-i18n="skills.fastNote"></p>
+        </article>
+
+        <article class="tile tile-term reveal" id="skillsTerminal">
+          <div class="term-bar"><i></i><i></i><i></i><span>visitor@suphakit085 — zsh</span></div>
+          <div class="term-out" id="termOut" aria-live="polite"></div>
+          <form class="term-in" id="termForm" autocomplete="off">
+            <label for="termInput">visitor@portfolio:~$</label>
+            <input id="termInput" spellcheck="false" />
+          </form>
+          <div class="term-chips" id="termChips"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-card">
+        <div class="contact-glow" aria-hidden="true"></div>
+        <span class="status-pill on-dark"><i class="dot"></i><span data-bind="status"></span></span>
+        <h2 id="contact-title" data-i18n-html="contact.title">Have a role that fits? Let’s talk anytime</h2>
+        <p data-i18n="contact.note"></p>
+        <div class="contact-actions" id="contactActions"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year">2026</span> Suphakit Kaeokaemthong · Khon Kaen, TH</span>
+    <a href="#top" data-i18n="footer.top">Back to top ↑</a>
+  </footer>
+
+  <script src="/assets/js/core.js"></script>
+  <script src="/assets/js/data.js"></script>
+  <script src="/assets/js/projects.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
