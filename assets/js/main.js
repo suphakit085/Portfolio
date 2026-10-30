@@ -289,11 +289,11 @@
   const cmds = {
     help: () => `${ui('term.help')} <span class="hl">about  skills  experience  projects  contact  neofetch  clear</span>`,
     about: () => esc(t(D.profile.intro)),
-    skills: () => D.skillRows.map((r, i) => `<span class="hl">${['BA    ', 'DATA  ', 'ML    ', 'TOOLS '][i]}</span> ${esc(r.join(', '))}`).join('\n'),
+    skills: () => D.skillRows.map((r, i) => `<span class="hl">${['AI    ', 'ML    ', 'DATA  ', 'TOOLS '][i]}</span> ${esc(r.join(', '))}`).join('\n'),
     experience: () => D.experience.map((e) => `<span class="hl">[${e.kind}]</span> ${esc(e.title)} · ${esc(e.org)} (${esc(t(e.where))})`).join('\n'),
     projects: () => PR.map((p, i) => `${String(i + 1).padStart(2, '0')}  <a href="${url(p.slug)}">${esc(p.title)}</a>  <span class="${p.status === 'done' ? 'ok' : 'hl'}">${esc(ui('status.' + p.status))}</span>`).join('\n'),
     contact: () => `email   <a href="${Lk.email}">${esc(Lk.emailText)}</a>\ngithub  <a href="${Lk.github}" target="_blank" rel="noopener">${esc(Lk.github.replace('https://', ''))}</a>\nresume  <a href="${Lk.resume}" target="_blank" rel="noopener">resume.pdf</a>`,
-    neofetch: () => `<span class="hl">suphakit085</span>@portfolio\n-------------------\n<span class="hl">Name</span>     ${esc(D.profile.name)}\n<span class="hl">Uni</span>      ${esc(D.profile.university)} · Year 4\n<span class="hl">GPA</span>      ${esc(D.profile.gpa)}\n<span class="hl">Focus</span>    Data & Business Analysis\n<span class="hl">Status</span>   <span class="ok">${esc(t(D.profile.status))}</span>`,
+    neofetch: () => `<span class="hl">suphakit085</span>@portfolio\n-------------------\n<span class="hl">Name</span>     ${esc(D.profile.name)}\n<span class="hl">Uni</span>      ${esc(D.profile.university)} · Year 4\n<span class="hl">GPA</span>      ${esc(D.profile.gpa)}\n<span class="hl">Focus</span>    AI & Data\n<span class="hl">Status</span>   <span class="ok">${esc(t(D.profile.status))}</span>`,
   };
   function run(raw) {
     const c = raw.trim().toLowerCase();

@@ -103,7 +103,7 @@ def home(projects):
     for gx in range(620, W, 22):
         for gy in range(0, H, 22):
             d.ellipse((gx, gy, gx + 2, gy + 2), fill=(232, 232, 232))
-    shots = [('thai-law-rag', 760, 40, 5, 300), ('genga-studio', 900, 250, -6, 270),
+    shots = [('thai-law-rag', 760, 40, 5, 300), ('crypto-fraud', 900, 250, -6, 270),
              ('popup-analytics', 700, 352, 4, 240), ('nutrilift', 930, 20, -3, 230)]
     covers = {p['slug']: p['cover'] for p in projects}
     for slug, x, y, r, w in shots:
@@ -116,15 +116,15 @@ def home(projects):
     img.paste(pr, (72, 92), m)
     d.ellipse((150, 166, 168, 184), fill=(34, 197, 94), outline=(255, 255, 255), width=3)
     pill(d, (186, 120), 'Open to co-op & internship', font('semi', 20), (245, 245, 245), INK, dot=(34, 197, 94))
-    d.text((72, 236), 'Turning messy data', font=font('bold', 62), fill=INK)
-    d.text((72, 310), 'into ', font=font('bold', 62), fill=INK)
-    x = 72 + d.textlength('into ', font=font('bold', 62))
-    d.text((x, 310), 'clear', font=font('bold', 62), fill=ACCENT)
-    cw = d.textlength('clear', font=font('bold', 62))
-    d.arc((x - 6, 372, x + cw + 6, 402), 200, 340, fill=ACCENT, width=5)
-    d.text((x + cw + 16, 310), 'decisions', font=font('bold', 62), fill=INK)
-    d.text((72, 420), 'Suphakit Kaeokaemthong', font=font('semi', 30), fill=INK)
-    d.text((72, 462), 'CS student · Khon Kaen University · Data & Business Analysis', font=font('reg', 22), fill=MUTED)
+    big, mid = font('bold', 66), font('bold', 40)
+    d.text((72, 222), "Hi, I'm ", font=big, fill=INK)
+    x = 72 + d.textlength("Hi, I'm ", font=big)
+    d.text((x, 222), 'Suphakit', font=big, fill=ACCENT)
+    cw = d.textlength('Suphakit', font=big)
+    d.arc((x - 6, 306, x + cw + 6, 332), 200, 340, fill=ACCENT, width=5)
+    d.text((72, 330), 'I build AI and data systems', font=mid, fill=INK)
+    d.text((72, 380), 'you can verify.', font=mid, fill=INK)
+    d.text((72, 452), 'CS @ Khon Kaen University · AI & Data', font=font('reg', 22), fill=MUTED)
     logo(d, 72, 548)
     img.convert('RGB').save(os.path.join(OUT, 'og-home.jpg'), 'JPEG', quality=88, optimize=True)
 

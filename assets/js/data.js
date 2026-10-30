@@ -14,24 +14,24 @@
       name: 'Suphakit Kaeokaemthong',
       handle: '@suphakit085',
       avatar: '/assets/img/portrait.webp',
-      role: 'Computer Science Student · Software Engineering · Data & Business Analysis',
+      role: 'Computer Science Student · AI & Data',
       location: 'Khon Kaen, TH · UTC+7',
       university: 'Khon Kaen University',
       program: { en: 'B.Sc. Computer Science · Year 4', th: 'วท.บ. วิทยาการคอมพิวเตอร์ · ปี 4' },
       gpa: '3.03',
       status: { en: 'Open to co-op & internship', th: 'เปิดรับ Co-op & Internship' },
       intro: {
-        en: 'Hi, I’m Suphakit, a fourth-year Computer Science student at Khon Kaen University. I work where business analysis meets data science — writing requirements and UML on one side, and building with Python, SQL and machine learning on the other.',
-        th: 'สวัสดีครับ ผม Suphakit นักศึกษา Computer Science ปี 4 มหาวิทยาลัยขอนแก่น ทำงานตรงจุดที่ business analysis มาเจอ data science — เขียน requirement กับ UML ฝั่งหนึ่ง แล้วลงมือสร้างด้วย Python, SQL และ machine learning อีกฝั่ง',
+        en: 'Fourth-year Computer Science student at Khon Kaen University, focused on AI and data — RAG systems that cite their sources, machine-learning models tested on data they have never seen, and dashboards executives can decide from. A business-analysis background helps me pin down the question before I touch the data.',
+        th: 'นักศึกษา Computer Science ปี 4 มหาวิทยาลัยขอนแก่น สาย AI และ Data — สร้างระบบ RAG ที่อ้างอิงแหล่งที่มาได้ โมเดล machine learning ที่ทดสอบกับข้อมูลที่ไม่เคยเห็น และ dashboard ที่ผู้บริหารใช้ตัดสินใจได้จริง พื้นฐาน business analysis ช่วยให้ผมเข้าใจโจทย์ก่อนลงมือกับข้อมูล',
       },
       story: {
-        en: 'During my internship as a Data Scientist at NAYOO Corporation I prepared the location data behind a land-price model, and designed a road-distance algorithm so accessibility was measured along real roads instead of straight lines. I enjoy following a problem from start to finish — writing the requirements and UML for a restaurant POS and then building its database and API, or taking 300,000 credit records through feature engineering to a working app.',
-        th: 'ระหว่างฝึกงานเป็น Data Scientist ที่ NAYOO Corporation ผมเตรียมข้อมูลทำเลให้โมเดลราคาที่ดิน และออกแบบอัลกอริทึมวัดระยะทาง ตามถนนจริง แทนเส้นตรง ผมชอบตามโจทย์ ตั้งแต่ต้นจนจบ ตั้งแต่เขียน requirement และ UML ของระบบ POS ไปจนถึงสร้างฐานข้อมูลและ API หรือพาข้อมูลเครดิต 300,000 แถว ผ่าน feature engineering จนเป็นแอปที่ใช้งานได้จริง',
+        en: 'During my internship as a Data Scientist at NAYOO Corporation I prepared the location data behind a land-price model, and designed a road-distance algorithm so accessibility was measured along real roads instead of straight lines. Since then I have built RAG systems that cite every source, trained models that are scored only on data they have never seen, and taken 300,000 credit records through feature engineering to a working LightGBM app. One rule runs through all of it: every number has to be checkable.',
+        th: 'ระหว่างฝึกงานเป็น Data Scientist ที่ NAYOO Corporation ผมเตรียมข้อมูลทำเลให้โมเดลราคาที่ดิน และออกแบบอัลกอริทึมวัดระยะทาง ตามถนนจริง แทนเส้นตรง หลังจากนั้นผมสร้างระบบ RAG ที่อ้างอิงแหล่งที่มาได้ทุกจุด เทรนโมเดลที่วัดผลกับข้อมูลที่ไม่เคยเห็นเท่านั้น และพาข้อมูลเครดิต 300,000 แถว ผ่าน feature engineering จนเป็นแอป LightGBM ที่ใช้งานได้จริง กฎข้อเดียวที่ผมยึดทุกโปรเจกต์คือ ตัวเลขทุกตัวต้องตรวจสอบได้',
       },
       trust: { en: '7 projects · all completed', th: '7 โปรเจกต์ · เสร็จสมบูรณ์ทั้งหมด' },
       looking: {
-        en: 'A co-op placement in data or business analysis, where both sides of my work are useful.',
-        th: 'ตำแหน่ง Co-op ด้าน Data หรือ Business Analysis ที่ได้ใช้ทั้งสองฝั่งร่วมกัน',
+        en: 'A co-op placement in AI, data science or data analysis.',
+        th: 'ตำแหน่ง Co-op ด้าน AI, Data Science หรือ Data Analysis',
       },
     },
 
@@ -58,8 +58,8 @@
       ['crypto-fraud', 13, 74, -3, 180, 12, true],
       ['nutrilift', 82, 11, 5, 210, 22],
       ['genga-studio', 86, 47, -5, 190, 14, true],
-      ['pos-shabu', 72, 75, 4, 200, 24, true],
-      ['review-sentiment', 25, 88, 3, 170, 10, true],
+      ['review-sentiment', 72, 75, 4, 200, 24, true],
+      ['pos-shabu', 25, 88, 3, 170, 10, true],
       ['portrait', 60, 89, -4, 160, 16, true],
     ],
 
@@ -84,26 +84,6 @@
           },
         },
         skills: ['Gemini API', 'pgvector', 'Qdrant', 'BGE-M3', 'Cross-encoder rerank', 'FastAPI', 'pytest'],
-      },
-      {
-        key: 'fullstack', label: 'Full-stack',
-        headline: 'Software Engineer · Web & Desktop',
-        bio: {
-          en: 'From UI to backend to installer — making the whole system work on the user’s own machine.',
-          th: 'ตั้งแต่ UI ไปจนถึง backend และ installer — ทำให้ระบบทั้งก้อนใช้งานได้จริงบนเครื่องผู้ใช้',
-        },
-        banner: { text: 'SHIP IT', bg: 'linear-gradient(135deg,#2e1065,#7c3aed 55%,#f0abfc)' },
-        tags: ['Next.js', 'FastAPI', 'Docker'],
-        stats: [['−98%', 'Gallery payload'], ['~36s', 'Render time'], ['5', 'POS modules'], ['15 GB', 'Auto install']],
-        works: ['genga-studio', 'pos-shabu', 'nutrilift'],
-        note: {
-          title: { en: '29 MB → 0.69 MB', th: '29 MB → 0.69 MB' },
-          body: {
-            en: 'Genga Studio’s gallery was sending 29 MB to draw one page of thumbnails. A cached WebP endpoint brought that down to 0.69 MB.',
-            th: 'แกลเลอรีของ Genga Studio เคยส่งไฟล์ 29 MB เพื่อวาด thumbnail หน้าเดียว ผมทำ endpoint WebP แบบ cache จนเหลือ 0.69 MB',
-          },
-        },
-        skills: ['Next.js 15', 'React 19', 'TypeScript', 'Prisma', 'SQLAlchemy', 'Docker', 'Inno Setup'],
       },
       {
         key: 'ml', label: 'Machine Learning',
@@ -146,8 +126,28 @@
         skills: ['Python', 'pandas', 'SQL', 'Power BI', 'Excel', 'Statistics', 'Road-network graphs'],
       },
       {
+        key: 'products', label: 'AI Products',
+        headline: 'AI Engineer · Shipping models to users',
+        bio: {
+          en: 'Taking models out of the notebook and into apps people install and use — with the engineering that keeps them fast and safe.',
+          th: 'พาโมเดลออกจาก notebook ไปเป็นแอปที่คนติดตั้งและใช้งานจริง — พร้อมงานวิศวกรรมที่ทำให้เร็วและปลอดภัย',
+        },
+        banner: { text: 'SHIP THE MODEL', bg: 'linear-gradient(135deg,#2e1065,#7c3aed 55%,#f0abfc)' },
+        tags: ['ComfyUI', 'FastAPI', 'Next.js'],
+        stats: [['−98%', 'Gallery payload'], ['~36s', 'Render time'], ['5', 'POS modules'], ['15 GB', 'Auto install']],
+        works: ['genga-studio', 'nutrilift', 'thai-law-rag'],
+        note: {
+          title: { en: '29 MB → 0.69 MB', th: '29 MB → 0.69 MB' },
+          body: {
+            en: 'Genga Studio’s gallery was sending 29 MB to draw one page of thumbnails. A cached WebP endpoint brought that down to 0.69 MB.',
+            th: 'แกลเลอรีของ Genga Studio เคยส่งไฟล์ 29 MB เพื่อวาด thumbnail หน้าเดียว ผมทำ endpoint WebP แบบ cache จนเหลือ 0.69 MB',
+          },
+        },
+        skills: ['ComfyUI', 'FastAPI', 'Next.js 15', 'SQLAlchemy', 'Docker', 'Inno Setup', 'Performance tuning'],
+      },
+      {
         key: 'ba', label: 'Business Analysis',
-        headline: 'Business & System Analyst',
+        headline: 'Business & System Analysis · the groundwork',
         bio: {
           en: 'Gathering requirements, turning them into UML and ER diagrams, and handing over an API spec the dev team can build from straight away.',
           th: 'เก็บ requirement แปลงเป็น UML และ ER diagram แล้วส่งต่อเป็น API spec ที่ทีมพัฒนาเอาไปทำต่อได้ทันที',
@@ -172,8 +172,8 @@
       { text: { en: 'AI making up nutrition numbers?', th: 'AI ตอบตัวเลขโภชนาการมั่ว?' }, slug: 'nutrilift', color: '#c5e5c0' },
       { text: { en: 'Thai has no spaces — keyword search misses everything?', th: 'ภาษาไทยไม่มีเว้นวรรค ค้นด้วย keyword ไม่เจอ?' }, slug: 'thai-law-rag', color: '#a3e0ef' },
       { text: { en: 'A gallery loading 29 MB at a time..', th: 'แกลเลอรีโหลดทีละ 29 MB..' }, slug: 'genga-studio', color: '#eccef3' },
-      { text: { en: 'Only 1 in 9 transactions is fraud — how do you catch it?', th: 'ธุรกรรมโกงมีแค่ราว 1 ใน 9 จะจับยังไง?' }, slug: 'crypto-fraud', color: '#f8da9d' },
-      { text: { en: 'Unclear requirements, so devs build the wrong thing?', th: 'requirement ไม่ชัด dev ทำไม่ถูก?' }, slug: 'pos-shabu', color: '#fad0b5' },
+      { text: { en: '94% accuracy — while catching zero fraud?', th: 'Accuracy 94% แต่จับโกงไม่ได้สักรายการ?' }, slug: 'crypto-fraud', color: '#f8da9d' },
+      { text: { en: 'AI citing law sections that don’t exist?', th: 'AI อ้างมาตรากฎหมายที่ไม่มีอยู่จริง?' }, slug: 'thai-law-rag', color: '#fad0b5' },
       { text: { en: 'Lots of footfall, so why so few sales?', th: 'คนเดินเยอะ แต่ทำไมยอดขายน้อย?' }, slug: 'popup-analytics', color: '#a5e3d6' },
       { text: { en: 'Ten thousand reviews — who has time to read them?', th: 'รีวิวเป็นหมื่น อ่านไม่ไหว?' }, slug: 'review-sentiment', color: '#fccadc' },
       { text: { en: 'Straight-line distance isn’t the real road distance', th: 'ระยะเส้นตรง ไม่ใช่ระยะทางจริงบนถนน' }, tag: 'NAYOO Internship', color: '#c4ddfb' },
@@ -212,22 +212,22 @@
             'วิชาที่เกี่ยวข้อง: Data Structures, Database Management Systems, Statistics, Data Analytics and Application, Neural Networks and Deep Learning, Software Engineering',
           ],
         },
-        chips: ['GPA 3.03', 'Year 4', 'Graduating 2027'],
+        chips: ['Statistics', 'Data Analytics', 'Deep Learning', 'GPA 3.03'],
       },
     ],
 
     /* ---------- Skill rows (marquee + terminal) ---------- */
     skillRows: [
-      ['Requirements Analysis', 'Business Process', 'UML', 'ER Diagram', 'Agile / Scrum', 'Jira', 'UAT'],
-      ['Python', 'pandas', 'SQL', 'Power BI', 'Excel', 'Statistics'],
-      ['LightGBM', 'XGBoost', 'NLP / TF-IDF', 'Geospatial', 'Streamlit', 'RAG'],
-      ['MySQL', 'PostgreSQL', 'MongoDB', 'Git / GitHub', 'Postman', 'Docker'],
+      ['RAG', 'LLM evaluation', 'Tool calling', 'Gemini API', 'pgvector', 'Qdrant', 'BGE-M3'],
+      ['scikit-learn', 'XGBoost', 'LightGBM', 'NLP / TF-IDF', 'SMOTE', 'Feature engineering', 'Streamlit'],
+      ['Python', 'pandas', 'SQL', 'Power BI', 'Excel', 'Statistics', 'Geospatial'],
+      ['FastAPI', 'PostgreSQL', 'MySQL', 'Docker', 'Git / GitHub', 'Requirements & UML', 'Jira'],
     ],
 
     process: [
-      [{ en: 'Understand', th: 'เข้าใจโจทย์' }, { en: 'Talk to users, gather requirements and user stories', th: 'คุยกับผู้ใช้ เก็บ requirement และ user story' }],
-      [{ en: 'Design', th: 'ออกแบบ' }, { en: 'UML, ER diagrams and an API spec before writing code', th: 'UML, ER diagram และ API spec ก่อนเขียนโค้ด' }],
-      [{ en: 'Build', th: 'ลงมือสร้าง' }, { en: 'Python, SQL, Next.js, FastAPI — whatever the job needs', th: 'Python, SQL, Next.js, FastAPI — ตามที่งานต้องการ' }],
+      [{ en: 'Frame the question', th: 'ตั้งโจทย์ให้ชัด' }, { en: 'Pin down the decision the data or model has to support', th: 'ระบุให้ชัดว่าข้อมูลหรือโมเดลต้องช่วยตัดสินใจเรื่องอะไร' }],
+      [{ en: 'Prepare the data', th: 'เตรียมข้อมูล' }, { en: 'Clean, join and engineer features — and split it honestly', th: 'ทำความสะอาด รวม และสร้าง feature — แล้วแบ่งข้อมูลอย่างซื่อตรง' }],
+      [{ en: 'Build', th: 'สร้างโมเดลและระบบ' }, { en: 'Models, RAG pipelines and the apps around them', th: 'โมเดล, RAG pipeline และแอปที่ครอบมันไว้' }],
       [{ en: 'Measure', th: 'วัดผลจริง' }, { en: 'Test with the metric that fits the problem, not just “looks good”', th: 'ทดสอบด้วย metric ที่ตรงโจทย์ ไม่ใช่แค่ “ดูดี”' }],
     ],
   };

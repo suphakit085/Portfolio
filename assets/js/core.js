@@ -10,10 +10,10 @@
 
   /* ข้อความ UI ทั้งหมด · <hand>คำ</hand> = ตัวเขียนมือสีน้ำเงิน · <pill>คำ</pill> = ไฮไลต์สีเหลือง */
   const UI = {
-    'meta.title': { en: 'Suphakit Kaeokaemthong · Portfolio', th: 'Suphakit Kaeokaemthong · พอร์ตโฟลิโอ' },
+    'meta.title': { en: 'Suphakit Kaeokaemthong · AI & Data Portfolio', th: 'Suphakit Kaeokaemthong · พอร์ตโฟลิโอสาย AI & Data' },
     'meta.desc': {
-      en: 'Computer Science student at Khon Kaen University working across software engineering, data science and business analysis. 7 projects in RAG, ML, full-stack and BI.',
-      th: 'นักศึกษา Computer Science มหาวิทยาลัยขอนแก่น สาย Software Engineering, Data Science และ Business Analysis — 7 โปรเจกต์ด้าน RAG, ML, Full-stack และ BI',
+      en: 'Computer Science student at Khon Kaen University focused on AI and data: RAG systems, machine learning, NLP and BI dashboards. 7 projects, open to co-op.',
+      th: 'นักศึกษา Computer Science มหาวิทยาลัยขอนแก่น สาย AI และ Data — ระบบ RAG, machine learning, NLP และ BI dashboard รวม 7 โปรเจกต์ เปิดรับ Co-op',
     },
     'nav.work': { en: 'Work', th: 'ผลงาน' },
     'nav.experience': { en: 'Experience', th: 'ประสบการณ์' },
@@ -22,8 +22,8 @@
     'nav.home': { en: 'Back to home', th: 'กลับหน้าแรก' },
     'nav.lang': { en: 'Switch language', th: 'เปลี่ยนภาษา' },
     'hero.title': {
-      en: '<span class="line">Turning messy data</span><span class="line">into <hand>clear</hand> decisions</span>',
-      th: '<span class="line">เปลี่ยนข้อมูลยุ่ง ๆ</span><span class="line">ให้เป็นการตัดสินใจที่ <hand>clear</hand></span>',
+      en: '<span class="line">Hi, I’m <hand>Suphakit</hand></span><span class="line"><span class="nw">I build AI and data systems</span> <span class="nw">you can verify</span></span>',
+      th: '<span class="line">สวัสดีครับ ผม <hand>Suphakit</hand></span><span class="line"><span class="nw">สร้างระบบ AI และงานข้อมูล</span> <span class="nw">ที่ตรวจสอบได้จริง</span></span>',
     },
     'hero.cta': { en: 'See my work', th: 'ดูผลงาน' },
     'hero.cta2': { en: 'Get in touch', th: 'ติดต่อผม' },
@@ -37,13 +37,13 @@
     'exp.eyebrow': { en: 'Experience & education', th: 'ประสบการณ์ & การศึกษา' },
     'exp.title': { en: 'From the classroom to <hand>real work</hand>', th: 'จากห้องเรียน สู่ <hand>real work</hand>' },
     'exp.sub': {
-      en: 'A real internship with real data, and coursework that covers both the business and the technical side.',
-      th: 'ฝึกงานจริงกับข้อมูลจริง และเรียนพื้นฐานที่ใช้ได้ทั้งฝั่งธุรกิจและฝั่งเทคนิค',
+      en: 'A Data Scientist internship on real data, and coursework in statistics, analytics and deep learning.',
+      th: 'ฝึกงานตำแหน่ง Data Scientist กับข้อมูลจริง และเรียนพื้นฐานทั้งสถิติ การวิเคราะห์ข้อมูล และ deep learning',
     },
     'exp.looking': { en: 'Looking for', th: 'กำลังมองหา' },
     'exp.cta': { en: 'Invite me to your team', th: 'ชวนผมร่วมทีม' },
     'skills.eyebrow': { en: 'Skills & how I work', th: 'ทักษะ & วิธีทำงาน' },
-    'skills.title': { en: 'Business side and data side —<br />I cover both', th: 'ทั้งฝั่งธุรกิจและฝั่งข้อมูล<br />ผมทำได้ครบ' },
+    'skills.title': { en: 'The tools and the thinking<br />behind every project', th: 'เครื่องมือและวิธีคิด<br />เบื้องหลังทุกโปรเจกต์' },
     'skills.stack': { en: 'Tools I use<br /><b>all the time</b>', th: 'เครื่องมือที่ใช้<br /><b>เป็นประจำ</b>' },
     'skills.orders': { en: 'Every project<br /><b>tracked and organised</b>', th: 'ติดตามทุกโปรเจกต์<br /><b>ให้เป็นระบบ</b>' },
     'skills.process': { en: 'Following a problem<br /><b>from start to finish</b>', th: 'ตามโจทย์<br /><b>ตั้งแต่ต้นจนจบ</b>' },

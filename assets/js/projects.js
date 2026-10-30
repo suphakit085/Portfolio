@@ -160,6 +160,210 @@
 
     /* ------------------------------------------------------------ */
     {
+      slug: 'crypto-fraud',
+      title: 'Crypto Fraud',
+      year: 2026, status: 'done', color: '#f8da9d',
+      cover: 'crypto-model-comparison',
+      kind: { en: 'Machine learning · team', th: 'Machine learning · งานกลุ่ม' },
+      role: { en: 'Modelling and evaluation · team project', th: 'สร้างโมเดลและวัดผล · งานกลุ่ม' },
+      github: 'https://github.com/annop07/Block-Chain-BigData/tree/main/crypto-project',
+      stack: ['Python', 'pandas', 'scikit-learn', 'XGBoost', 'SMOTE', 'Streamlit'],
+      metric: { en: 'F1 0.81 · Precision 90.5%', th: 'F1 0.81 · Precision 90.5%' },
+      metrics: [
+        ['0.81', { en: 'F1 (illicit)', th: 'F1 (ธุรกรรมผิดกฎหมาย)' }],
+        ['90.5%', { en: 'Precision', th: 'Precision' }],
+        ['73.3%', { en: 'Recall', th: 'Recall' }],
+        ['83', { en: 'False alarms / 15,587', th: 'แจ้งเตือนผิด / 15,587' }],
+      ],
+      summary: {
+        en: 'A model that flags illicit Bitcoin transactions in the Elliptic dataset. It is tested on later time periods than it was trained on, so the score reflects activity the model has never seen.',
+        th: 'โมเดลจับธุรกรรม Bitcoin ผิดกฎหมายในชุดข้อมูล Elliptic ทดสอบกับช่วงเวลาหลังจากที่ใช้เทรน คะแนนจึงสะท้อนพฤติกรรมที่โมเดลไม่เคยเห็นมาก่อน',
+      },
+      sections: [
+        { h: { en: 'Overview', th: 'ภาพรวม' },
+          p: {
+            en: 'A group project for a big data course. The Elliptic dataset records Bitcoin transactions as a graph and marks some of them as illicit or legitimate, which makes it a fair test of whether a model can spot criminal activity among ordinary payments.',
+            th: 'งานกลุ่มวิชา Big Data ชุดข้อมูล Elliptic เก็บธุรกรรม Bitcoin เป็นกราฟ และระบุบางรายการว่าผิดกฎหมายหรือถูกกฎหมาย จึงเป็นบททดสอบที่ยุติธรรมว่าโมเดลแยกธุรกรรมอาชญากรรมออกจากการจ่ายเงินปกติได้หรือไม่',
+          } },
+        { h: { en: 'My part', th: 'ส่วนที่ผมทำ' },
+          items: {
+            en: [
+              'Split the data by time instead of at random: the model learns from the earlier period and is tested on the later one, so it is never scored on transactions from a period it had already seen. Criminal behaviour changes over time, and a random split would have flattered the result.',
+              'Balanced the training data, where only about one transaction in nine was illicit, so the model would not simply learn to call everything legitimate.',
+              'Trained three models — Logistic Regression, Random Forest and XGBoost — and compared them over the same test period.',
+              'Wired the trained models into the team’s Streamlit app so a transaction can be scored one at a time.',
+            ],
+            th: [
+              'แบ่งข้อมูลตามเวลาแทนการสุ่ม: เทรนด้วยช่วงก่อน ทดสอบด้วยช่วงหลัง โมเดลจึงไม่เคยถูกวัดผลกับช่วงที่เคยเห็น — พฤติกรรมอาชญากรเปลี่ยนตามเวลา ถ้าสุ่มแบ่งผลจะดูดีเกินจริง',
+              'ปรับสมดุลข้อมูลเทรน ซึ่งมีธุรกรรมผิดกฎหมายเพียงราว 1 ใน 9 เพื่อไม่ให้โมเดลเรียนรู้แค่การตอบว่า "ปกติ" ทุกรายการ',
+              'เทรน 3 โมเดล — Logistic Regression, Random Forest และ XGBoost — แล้วเทียบกันบนช่วงทดสอบเดียวกัน',
+              'เชื่อมโมเดลเข้ากับแอป Streamlit ของทีม ให้ให้คะแนนธุรกรรมทีละรายการได้',
+            ],
+          } },
+        { h: { en: 'What the numbers say', th: 'ตัวเลขบอกอะไร' },
+          p: {
+            en: 'Only about 6% of the test transactions are illicit, so plain accuracy is misleading — a model that flags nothing at all would still be right 94% of the time. What matters is how many real cases it catches and how many false alarms it raises:',
+            th: 'ในชุดทดสอบมีธุรกรรมผิดกฎหมายแค่ราว 6% ค่า accuracy ธรรมดาจึงหลอกตา — โมเดลที่ไม่จับอะไรเลยก็ยังถูก 94% สิ่งที่สำคัญคือจับเคสจริงได้กี่เคส และแจ้งเตือนผิดกี่ครั้ง:',
+          },
+          items: {
+            en: [
+              'XGBoost caught 794 of the 1,083 illicit transactions while wrongly flagging only 83 of the 15,587 legitimate ones.',
+              'Random Forest came out almost identical, so the two are interchangeable here.',
+              'Logistic Regression caught a few more — 906 — but raised 3,524 false alarms doing it, which would mean an analyst chasing roughly four dead ends for every real one. It is the clearest reminder that a single number never settles which model is better.',
+            ],
+            th: [
+              'XGBoost จับได้ 794 จาก 1,083 ธุรกรรมผิดกฎหมาย โดยแจ้งเตือนผิดเพียง 83 จาก 15,587 ธุรกรรมปกติ',
+              'Random Forest ได้ผลแทบเท่ากัน ใช้แทนกันได้ในงานนี้',
+              'Logistic Regression จับได้มากกว่าเล็กน้อย — 906 — แต่แจ้งเตือนผิดถึง 3,524 ครั้ง เท่ากับนักวิเคราะห์ต้องไล่ตามเคสหลอกราว 4 เคสต่อเคสจริง 1 เคส — ตัวอย่างชัดเจนว่าตัวเลขเดียวไม่พอจะตัดสินว่าโมเดลไหนดีกว่า',
+            ],
+          } },
+        { h: { en: 'Tools', th: 'เครื่องมือ' },
+          p: {
+            en: 'Python with pandas for the data, scikit-learn and XGBoost for the models, imbalanced-learn to balance the training set, and Streamlit for the app the team delivered.',
+            th: 'Python กับ pandas จัดการข้อมูล, scikit-learn และ XGBoost สำหรับโมเดล, imbalanced-learn ปรับสมดุลข้อมูลเทรน และ Streamlit สำหรับแอปที่ทีมส่งมอบ',
+          } },
+      ],
+      gallery: [
+        { src: 'crypto-cm-xgboost', cap: { en: 'XGBoost on the held-out period: 794 illicit transactions caught, 289 missed, 83 false alarms', th: 'XGBoost บนช่วงทดสอบ: จับได้ 794 พลาด 289 แจ้งเตือนผิด 83' } },
+        { src: 'crypto-cm-logreg', cap: { en: 'The same period for the linear baseline: 906 caught, but 3,524 legitimate transactions wrongly flagged', th: 'ช่วงเดียวกันของ baseline เชิงเส้น: จับได้ 906 แต่ธุรกรรมปกติถูกแจ้งผิด 3,524 รายการ' } },
+        { src: 'crypto-feature-importance', cap: { en: 'The twenty features the model leaned on most when separating illicit transactions from ordinary ones', th: '20 feature ที่โมเดลใช้มากที่สุดในการแยกธุรกรรมผิดกฎหมายออกจากธุรกรรมปกติ' } },
+      ],
+    },
+
+    /* ------------------------------------------------------------ */
+    {
+      slug: 'review-sentiment',
+      title: 'Review Sentiment',
+      year: 2026, status: 'done', color: '#fccadc',
+      cover: 'sentiment-analyze',
+      coverCap: {
+        en: 'A single review scored with its confidence and class probabilities.',
+        th: 'รีวิวหนึ่งรายการที่ถูกให้คะแนน พร้อมความมั่นใจและความน่าจะเป็นของแต่ละคลาส',
+      },
+      kind: { en: 'NLP & data science', th: 'NLP และ data science' },
+      role: { en: 'NLP & data science', th: 'NLP และ data science' },
+      github: 'https://github.com/suphakit085/Sentiment-Analysis-of-Restaurant-Reviews-using-NLP-and-Machine-Learning',
+      stack: ['Python', 'scikit-learn', 'TF-IDF', 'Streamlit'],
+      metric: { en: 'Accuracy 84.1% · 4 models', th: 'Accuracy 84.1% · 4 โมเดล' },
+      metrics: [
+        ['10,000', { en: 'Reviews', th: 'รีวิว' }],
+        ['84.1%', { en: 'Accuracy', th: 'Accuracy' }],
+        ['4', { en: 'Models compared', th: 'โมเดลที่เปรียบเทียบ' }],
+        ['3', { en: 'Classes', th: 'คลาส' }],
+      ],
+      summary: {
+        en: 'A natural-language-processing pipeline that reads 10,000 Yelp restaurant reviews and labels each one as positive, neutral or negative.',
+        th: 'NLP pipeline ที่อ่านรีวิวร้านอาหารจาก Yelp 10,000 รีวิว แล้วจัดแต่ละรีวิวเป็นเชิงบวก กลาง หรือลบ',
+      },
+      sections: [
+        { h: { en: 'Overview', th: 'ภาพรวม' },
+          p: {
+            en: 'Restaurants receive far more reviews than anyone can read. This project trains a classifier on 10,000 English Yelp restaurant reviews to label each one positive, neutral or negative, and ships it as a small app for single or batch predictions.',
+            th: 'ร้านอาหารได้รีวิวมากเกินกว่าที่ใครจะอ่านไหว โปรเจกต์นี้เทรน classifier บนรีวิวภาษาอังกฤษจาก Yelp 10,000 รีวิว ให้จัดเป็นบวก กลาง หรือลบ แล้วส่งมอบเป็นแอปเล็ก ๆ ที่ทำนายได้ทั้งทีละรีวิวและทีละหลายรีวิว',
+          } },
+        { h: { en: 'Approach', th: 'วิธีทำ' },
+          items: {
+            en: [
+              'Converted the reviews into TF-IDF features.',
+              'Compared Naive Bayes, Logistic Regression, SVM and class-balanced variants, choosing the final model by macro F1 so the smaller neutral class counts as much as the others.',
+              'Tuned hyperparameters with cross-validation.',
+              'Studied the errors with confusion matrices and per-class F1 to address class imbalance.',
+              'Reached 84.1% accuracy on the test set.',
+            ],
+            th: [
+              'แปลงรีวิวเป็น feature แบบ TF-IDF',
+              'เปรียบเทียบ Naive Bayes, Logistic Regression, SVM และแบบ class-balanced เลือกโมเดลสุดท้ายด้วย macro F1 เพื่อให้คลาส "กลาง" ที่มีน้อยมีน้ำหนักเท่าคลาสอื่น',
+              'จูน hyperparameter ด้วย cross-validation',
+              'วิเคราะห์ความผิดพลาดด้วย confusion matrix และ F1 รายคลาส เพื่อรับมือกับข้อมูลไม่สมดุล',
+              'ได้ accuracy 84.1% บนชุดทดสอบ',
+            ],
+          } },
+        { h: { en: 'The app', th: 'ตัวแอป' },
+          p: {
+            en: 'The app has three parts: Analyze scores a single review and shows the probability for each class; Batch scores one review per line and summarises the distribution; Model report carries the training diagnostics — class balance, model comparison, word clouds per class and per-class F1.',
+            th: 'แอปมี 3 ส่วน: Analyze ให้คะแนนทีละรีวิวพร้อมความน่าจะเป็นของแต่ละคลาส, Batch ให้คะแนนบรรทัดละรีวิวแล้วสรุปการกระจาย และ Model report แสดงผลวินิจฉัยการเทรน — สมดุลคลาส การเทียบโมเดล word cloud รายคลาส และ F1 รายคลาส',
+          } },
+      ],
+      gallery: [
+        { src: 'sentiment-batch', cap: { en: 'Batch mode: every line scored, with the distribution summarised', th: 'โหมด Batch: ให้คะแนนทุกบรรทัด พร้อมสรุปการกระจาย' } },
+        { src: 'sentiment-report', cap: { en: 'Class balance of the corpus and accuracy/precision/recall/F1 across the three models', th: 'สมดุลคลาสของข้อมูล และ accuracy/precision/recall/F1 ของทั้งสามโมเดล' } },
+        { src: 'sentiment-wordclouds', cap: { en: 'Most frequent lemmas per class, and per-class F1 — neutral is the hard class', th: 'คำที่พบบ่อยที่สุดในแต่ละคลาส และ F1 รายคลาส — คลาส "กลาง" ยากที่สุด' } },
+      ],
+    },
+    /* ------------------------------------------------------------ */
+    {
+      slug: 'popup-analytics',
+      title: 'Popup Analytics',
+      year: 2025, status: 'done', color: '#a5e3d6',
+      cover: 'popup-dashboard',
+      kind: { en: 'Business & data analysis', th: 'Business และ data analysis' },
+      role: { en: 'Business & data analysis', th: 'วิเคราะห์ธุรกิจและข้อมูล' },
+      github: 'https://github.com/suphakit085/Luxury-Popup-Marketing-Analysis',
+      stack: ['Power BI', 'Excel', 'Data Analysis', 'KPI Design'],
+      metric: { en: 'Revenue 398.74M · Sell-through 73.4%', th: 'รายได้ 398.74M · Sell-through 73.4%' },
+      metrics: [
+        ['398.74M', { en: 'Total revenue', th: 'รายได้รวม' }],
+        ['73.4%', { en: 'Sell-through', th: 'Sell-through' }],
+        ['2.93%', { en: 'Conversion', th: 'Conversion' }],
+        ['186.94K', { en: 'Avg revenue / event', th: 'รายได้เฉลี่ย / งาน' }],
+      ],
+      summary: {
+        en: 'An analysis of how luxury cosmetics pop-up stores performed across regions and event formats, presented as a Power BI dashboard for executives.',
+        th: 'วิเคราะห์ผลการดำเนินงานของ pop-up store เครื่องสำอางหรู แยกตามภูมิภาคและรูปแบบงาน นำเสนอเป็น Power BI dashboard สำหรับผู้บริหาร',
+      },
+      sections: [
+        { h: { en: 'Overview', th: 'ภาพรวม' },
+          p: {
+            en: 'Luxury cosmetics brands run short pop-up stores in malls, airports and event venues. The question behind this project was practical: which locations and event formats actually pay off? I analysed sales, footfall, pricing and duration across regions and turned the answers into a Power BI dashboard for executives.',
+            th: 'แบรนด์เครื่องสำอางหรูเปิด pop-up store ระยะสั้นในห้าง สนามบิน และสถานที่จัดงาน คำถามของโปรเจกต์นี้ตรงไปตรงมา: ทำเลและรูปแบบงานแบบไหนที่คุ้มจริง ผมวิเคราะห์ยอดขาย จำนวนคนเดิน ราคา และระยะเวลาจัดงานในแต่ละภูมิภาค แล้วสรุปเป็น Power BI dashboard ให้ผู้บริหาร',
+          } },
+        { h: { en: 'Headline numbers', th: 'ตัวเลขหลัก' },
+          items: {
+            en: [
+              '398.74M total revenue across the events in the dataset, from 4M units sold.',
+              '186.94K average revenue per event.',
+              '73.37% average sell-through — most stock placed in a pop-up actually sells.',
+              '2.93% conversion rate, measured against footfall.',
+            ],
+            th: [
+              'รายได้รวม 398.74M จากทุกงานในชุดข้อมูล ขายได้ 4M ชิ้น',
+              'รายได้เฉลี่ย 186.94K ต่องาน',
+              'Sell-through เฉลี่ย 73.37% — สินค้าส่วนใหญ่ที่วางใน pop-up ขายออกจริง',
+              'Conversion rate 2.93% เทียบกับจำนวนคนเดิน',
+            ],
+          } },
+        { h: { en: 'What I found', th: 'สิ่งที่ค้นพบ' },
+          p: {
+            en: 'The most useful result was that footfall and revenue do not move together. Ranking event formats by revenue per day against average daily footfall separates them clearly:',
+            th: 'ผลที่มีประโยชน์ที่สุดคือ จำนวนคนเดินกับรายได้ไม่ได้ขยับไปด้วยกัน เมื่อจัดอันดับรูปแบบงานด้วยรายได้ต่อวันเทียบกับคนเดินเฉลี่ยต่อวัน จะแยกกันชัดเจน:',
+          },
+          items: {
+            en: [
+              'Flash Events earn the most per day (~4.2K) on some of the lowest footfall — short, concentrated events convert best.',
+              'Mall Kiosks draw the highest footfall but earn the least per day, so traffic alone is a poor target.',
+              'By location type, Art/Design District leads on revenue per day (4.5K) ahead of Luxury Mall (3.7K).',
+              'Revenue is spread evenly across regions — Europe leads at 89M, Asia-Pacific trails at 73M — so the opportunity is in format, not geography.',
+            ],
+            th: [
+              'Flash Event ทำรายได้ต่อวันสูงสุด (~4.2K) ทั้งที่คนเดินน้อยที่สุดกลุ่มหนึ่ง — งานสั้นและกระชับ convert ดีที่สุด',
+              'Mall Kiosk มีคนเดินมากที่สุด แต่รายได้ต่อวันน้อยที่สุด การไล่ตามจำนวนคนอย่างเดียวจึงไม่ใช่เป้าที่ดี',
+              'แยกตามประเภททำเล Art/Design District นำด้วยรายได้ต่อวัน 4.5K ตามด้วย Luxury Mall 3.7K',
+              'รายได้กระจายตัวเท่า ๆ กันทุกภูมิภาค — ยุโรปนำที่ 89M เอเชียแปซิฟิกตามหลังที่ 73M — โอกาสจึงอยู่ที่รูปแบบงาน ไม่ใช่ภูมิศาสตร์',
+            ],
+          } },
+        { h: { en: 'Deliverable', th: 'สิ่งที่ส่งมอบ' },
+          p: {
+            en: 'An executive-ready Power BI dashboard: KPI cards across the top, then brand, region, location-type and event-format breakdowns, plus a monthly revenue trend with a date slicer. The trend page carries a note that the final months are incomplete, so the drop at the end is not read as falling sales.',
+            th: 'Power BI dashboard พร้อมนำเสนอผู้บริหาร: การ์ด KPI ด้านบน ตามด้วยการแจกแจงตามแบรนด์ ภูมิภาค ประเภททำเล และรูปแบบงาน พร้อมกราฟแนวโน้มรายได้รายเดือนที่มีตัวกรองวันที่ หน้ากราฟมีหมายเหตุว่าเดือนท้าย ๆ ข้อมูลยังไม่ครบ เพื่อไม่ให้ช่วงที่ลดลงถูกอ่านว่ายอดขายตก',
+          } },
+      ],
+      gallery: [
+        { src: 'popup-revenue-trend', cap: { en: 'Monthly revenue trend, annotated so incomplete months are not mistaken for a decline', th: 'แนวโน้มรายได้รายเดือน พร้อมหมายเหตุไม่ให้เดือนที่ข้อมูลไม่ครบถูกเข้าใจว่ายอดตก' } },
+      ],
+    },
+
+    /* ------------------------------------------------------------ */
+    {
       slug: 'genga-studio',
       title: 'Genga Studio',
       year: 2026, status: 'done', color: '#eccef3',
@@ -234,78 +438,6 @@
         { src: 'genga-sketch-before-after', cap: { en: 'Sketch to anime: the same lines on both sides, at the proportions of the drawing that went in', th: 'Sketch to anime: ลายเส้นเดียวกันทั้งสองฝั่ง ในสัดส่วนของภาพต้นฉบับ' } },
         { src: 'genga-inpaint-before-after', cap: { en: 'Inpainting repaints only what was masked — here the jacket changes while the face, hair and background are left alone', th: 'Inpainting วาดใหม่เฉพาะส่วนที่ระบาย — เสื้อแจ็กเก็ตเปลี่ยน แต่หน้า ผม และพื้นหลังเหมือนเดิม' } },
         { src: 'genga-auth', cap: { en: 'Accounts live on the customer’s own machine — there is no account server behind this', th: 'บัญชีผู้ใช้อยู่บนเครื่องลูกค้าเอง — ไม่มีเซิร์ฟเวอร์บัญชีอยู่เบื้องหลัง' } },
-      ],
-    },
-
-    /* ------------------------------------------------------------ */
-    {
-      slug: 'crypto-fraud',
-      title: 'Crypto Fraud',
-      year: 2026, status: 'done', color: '#f8da9d',
-      cover: 'crypto-model-comparison',
-      kind: { en: 'Machine learning · team', th: 'Machine learning · งานกลุ่ม' },
-      role: { en: 'Modelling and evaluation · team project', th: 'สร้างโมเดลและวัดผล · งานกลุ่ม' },
-      github: 'https://github.com/annop07/Block-Chain-BigData/tree/main/crypto-project',
-      stack: ['Python', 'pandas', 'scikit-learn', 'XGBoost', 'SMOTE', 'Streamlit'],
-      metric: { en: 'F1 0.81 · Precision 90.5%', th: 'F1 0.81 · Precision 90.5%' },
-      metrics: [
-        ['0.81', { en: 'F1 (illicit)', th: 'F1 (ธุรกรรมผิดกฎหมาย)' }],
-        ['90.5%', { en: 'Precision', th: 'Precision' }],
-        ['73.3%', { en: 'Recall', th: 'Recall' }],
-        ['83', { en: 'False alarms / 15,587', th: 'แจ้งเตือนผิด / 15,587' }],
-      ],
-      summary: {
-        en: 'A model that flags illicit Bitcoin transactions in the Elliptic dataset. It is tested on later time periods than it was trained on, so the score reflects activity the model has never seen.',
-        th: 'โมเดลจับธุรกรรม Bitcoin ผิดกฎหมายในชุดข้อมูล Elliptic ทดสอบกับช่วงเวลาหลังจากที่ใช้เทรน คะแนนจึงสะท้อนพฤติกรรมที่โมเดลไม่เคยเห็นมาก่อน',
-      },
-      sections: [
-        { h: { en: 'Overview', th: 'ภาพรวม' },
-          p: {
-            en: 'A group project for a big data course. The Elliptic dataset records Bitcoin transactions as a graph and marks some of them as illicit or legitimate, which makes it a fair test of whether a model can spot criminal activity among ordinary payments.',
-            th: 'งานกลุ่มวิชา Big Data ชุดข้อมูล Elliptic เก็บธุรกรรม Bitcoin เป็นกราฟ และระบุบางรายการว่าผิดกฎหมายหรือถูกกฎหมาย จึงเป็นบททดสอบที่ยุติธรรมว่าโมเดลแยกธุรกรรมอาชญากรรมออกจากการจ่ายเงินปกติได้หรือไม่',
-          } },
-        { h: { en: 'My part', th: 'ส่วนที่ผมทำ' },
-          items: {
-            en: [
-              'Split the data by time instead of at random: the model learns from the earlier period and is tested on the later one, so it is never scored on transactions from a period it had already seen. Criminal behaviour changes over time, and a random split would have flattered the result.',
-              'Balanced the training data, where only about one transaction in nine was illicit, so the model would not simply learn to call everything legitimate.',
-              'Trained three models — Logistic Regression, Random Forest and XGBoost — and compared them over the same test period.',
-              'Wired the trained models into the team’s Streamlit app so a transaction can be scored one at a time.',
-            ],
-            th: [
-              'แบ่งข้อมูลตามเวลาแทนการสุ่ม: เทรนด้วยช่วงก่อน ทดสอบด้วยช่วงหลัง โมเดลจึงไม่เคยถูกวัดผลกับช่วงที่เคยเห็น — พฤติกรรมอาชญากรเปลี่ยนตามเวลา ถ้าสุ่มแบ่งผลจะดูดีเกินจริง',
-              'ปรับสมดุลข้อมูลเทรน ซึ่งมีธุรกรรมผิดกฎหมายเพียงราว 1 ใน 9 เพื่อไม่ให้โมเดลเรียนรู้แค่การตอบว่า "ปกติ" ทุกรายการ',
-              'เทรน 3 โมเดล — Logistic Regression, Random Forest และ XGBoost — แล้วเทียบกันบนช่วงทดสอบเดียวกัน',
-              'เชื่อมโมเดลเข้ากับแอป Streamlit ของทีม ให้ให้คะแนนธุรกรรมทีละรายการได้',
-            ],
-          } },
-        { h: { en: 'What the numbers say', th: 'ตัวเลขบอกอะไร' },
-          p: {
-            en: 'Only about 6% of the test transactions are illicit, so plain accuracy is misleading — a model that flags nothing at all would still be right 94% of the time. What matters is how many real cases it catches and how many false alarms it raises:',
-            th: 'ในชุดทดสอบมีธุรกรรมผิดกฎหมายแค่ราว 6% ค่า accuracy ธรรมดาจึงหลอกตา — โมเดลที่ไม่จับอะไรเลยก็ยังถูก 94% สิ่งที่สำคัญคือจับเคสจริงได้กี่เคส และแจ้งเตือนผิดกี่ครั้ง:',
-          },
-          items: {
-            en: [
-              'XGBoost caught 794 of the 1,083 illicit transactions while wrongly flagging only 83 of the 15,587 legitimate ones.',
-              'Random Forest came out almost identical, so the two are interchangeable here.',
-              'Logistic Regression caught a few more — 906 — but raised 3,524 false alarms doing it, which would mean an analyst chasing roughly four dead ends for every real one. It is the clearest reminder that a single number never settles which model is better.',
-            ],
-            th: [
-              'XGBoost จับได้ 794 จาก 1,083 ธุรกรรมผิดกฎหมาย โดยแจ้งเตือนผิดเพียง 83 จาก 15,587 ธุรกรรมปกติ',
-              'Random Forest ได้ผลแทบเท่ากัน ใช้แทนกันได้ในงานนี้',
-              'Logistic Regression จับได้มากกว่าเล็กน้อย — 906 — แต่แจ้งเตือนผิดถึง 3,524 ครั้ง เท่ากับนักวิเคราะห์ต้องไล่ตามเคสหลอกราว 4 เคสต่อเคสจริง 1 เคส — ตัวอย่างชัดเจนว่าตัวเลขเดียวไม่พอจะตัดสินว่าโมเดลไหนดีกว่า',
-            ],
-          } },
-        { h: { en: 'Tools', th: 'เครื่องมือ' },
-          p: {
-            en: 'Python with pandas for the data, scikit-learn and XGBoost for the models, imbalanced-learn to balance the training set, and Streamlit for the app the team delivered.',
-            th: 'Python กับ pandas จัดการข้อมูล, scikit-learn และ XGBoost สำหรับโมเดล, imbalanced-learn ปรับสมดุลข้อมูลเทรน และ Streamlit สำหรับแอปที่ทีมส่งมอบ',
-          } },
-      ],
-      gallery: [
-        { src: 'crypto-cm-xgboost', cap: { en: 'XGBoost on the held-out period: 794 illicit transactions caught, 289 missed, 83 false alarms', th: 'XGBoost บนช่วงทดสอบ: จับได้ 794 พลาด 289 แจ้งเตือนผิด 83' } },
-        { src: 'crypto-cm-logreg', cap: { en: 'The same period for the linear baseline: 906 caught, but 3,524 legitimate transactions wrongly flagged', th: 'ช่วงเดียวกันของ baseline เชิงเส้น: จับได้ 906 แต่ธุรกรรมปกติถูกแจ้งผิด 3,524 รายการ' } },
-        { src: 'crypto-feature-importance', cap: { en: 'The twenty features the model leaned on most when separating illicit transactions from ordinary ones', th: '20 feature ที่โมเดลใช้มากที่สุดในการแยกธุรกรรมผิดกฎหมายออกจากธุรกรรมปกติ' } },
       ],
     },
 
@@ -387,137 +519,5 @@
       ],
     },
 
-    /* ------------------------------------------------------------ */
-    {
-      slug: 'popup-analytics',
-      title: 'Popup Analytics',
-      year: 2025, status: 'done', color: '#a5e3d6',
-      cover: 'popup-dashboard',
-      kind: { en: 'Business & data analysis', th: 'Business และ data analysis' },
-      role: { en: 'Business & data analysis', th: 'วิเคราะห์ธุรกิจและข้อมูล' },
-      github: 'https://github.com/suphakit085/Luxury-Popup-Marketing-Analysis',
-      stack: ['Power BI', 'Excel', 'Data Analysis', 'KPI Design'],
-      metric: { en: 'Revenue 398.74M · Sell-through 73.4%', th: 'รายได้ 398.74M · Sell-through 73.4%' },
-      metrics: [
-        ['398.74M', { en: 'Total revenue', th: 'รายได้รวม' }],
-        ['73.4%', { en: 'Sell-through', th: 'Sell-through' }],
-        ['2.93%', { en: 'Conversion', th: 'Conversion' }],
-        ['186.94K', { en: 'Avg revenue / event', th: 'รายได้เฉลี่ย / งาน' }],
-      ],
-      summary: {
-        en: 'An analysis of how luxury cosmetics pop-up stores performed across regions and event formats, presented as a Power BI dashboard for executives.',
-        th: 'วิเคราะห์ผลการดำเนินงานของ pop-up store เครื่องสำอางหรู แยกตามภูมิภาคและรูปแบบงาน นำเสนอเป็น Power BI dashboard สำหรับผู้บริหาร',
-      },
-      sections: [
-        { h: { en: 'Overview', th: 'ภาพรวม' },
-          p: {
-            en: 'Luxury cosmetics brands run short pop-up stores in malls, airports and event venues. The question behind this project was practical: which locations and event formats actually pay off? I analysed sales, footfall, pricing and duration across regions and turned the answers into a Power BI dashboard for executives.',
-            th: 'แบรนด์เครื่องสำอางหรูเปิด pop-up store ระยะสั้นในห้าง สนามบิน และสถานที่จัดงาน คำถามของโปรเจกต์นี้ตรงไปตรงมา: ทำเลและรูปแบบงานแบบไหนที่คุ้มจริง ผมวิเคราะห์ยอดขาย จำนวนคนเดิน ราคา และระยะเวลาจัดงานในแต่ละภูมิภาค แล้วสรุปเป็น Power BI dashboard ให้ผู้บริหาร',
-          } },
-        { h: { en: 'Headline numbers', th: 'ตัวเลขหลัก' },
-          items: {
-            en: [
-              '398.74M total revenue across the events in the dataset, from 4M units sold.',
-              '186.94K average revenue per event.',
-              '73.37% average sell-through — most stock placed in a pop-up actually sells.',
-              '2.93% conversion rate, measured against footfall.',
-            ],
-            th: [
-              'รายได้รวม 398.74M จากทุกงานในชุดข้อมูล ขายได้ 4M ชิ้น',
-              'รายได้เฉลี่ย 186.94K ต่องาน',
-              'Sell-through เฉลี่ย 73.37% — สินค้าส่วนใหญ่ที่วางใน pop-up ขายออกจริง',
-              'Conversion rate 2.93% เทียบกับจำนวนคนเดิน',
-            ],
-          } },
-        { h: { en: 'What I found', th: 'สิ่งที่ค้นพบ' },
-          p: {
-            en: 'The most useful result was that footfall and revenue do not move together. Ranking event formats by revenue per day against average daily footfall separates them clearly:',
-            th: 'ผลที่มีประโยชน์ที่สุดคือ จำนวนคนเดินกับรายได้ไม่ได้ขยับไปด้วยกัน เมื่อจัดอันดับรูปแบบงานด้วยรายได้ต่อวันเทียบกับคนเดินเฉลี่ยต่อวัน จะแยกกันชัดเจน:',
-          },
-          items: {
-            en: [
-              'Flash Events earn the most per day (~4.2K) on some of the lowest footfall — short, concentrated events convert best.',
-              'Mall Kiosks draw the highest footfall but earn the least per day, so traffic alone is a poor target.',
-              'By location type, Art/Design District leads on revenue per day (4.5K) ahead of Luxury Mall (3.7K).',
-              'Revenue is spread evenly across regions — Europe leads at 89M, Asia-Pacific trails at 73M — so the opportunity is in format, not geography.',
-            ],
-            th: [
-              'Flash Event ทำรายได้ต่อวันสูงสุด (~4.2K) ทั้งที่คนเดินน้อยที่สุดกลุ่มหนึ่ง — งานสั้นและกระชับ convert ดีที่สุด',
-              'Mall Kiosk มีคนเดินมากที่สุด แต่รายได้ต่อวันน้อยที่สุด การไล่ตามจำนวนคนอย่างเดียวจึงไม่ใช่เป้าที่ดี',
-              'แยกตามประเภททำเล Art/Design District นำด้วยรายได้ต่อวัน 4.5K ตามด้วย Luxury Mall 3.7K',
-              'รายได้กระจายตัวเท่า ๆ กันทุกภูมิภาค — ยุโรปนำที่ 89M เอเชียแปซิฟิกตามหลังที่ 73M — โอกาสจึงอยู่ที่รูปแบบงาน ไม่ใช่ภูมิศาสตร์',
-            ],
-          } },
-        { h: { en: 'Deliverable', th: 'สิ่งที่ส่งมอบ' },
-          p: {
-            en: 'An executive-ready Power BI dashboard: KPI cards across the top, then brand, region, location-type and event-format breakdowns, plus a monthly revenue trend with a date slicer. The trend page carries a note that the final months are incomplete, so the drop at the end is not read as falling sales.',
-            th: 'Power BI dashboard พร้อมนำเสนอผู้บริหาร: การ์ด KPI ด้านบน ตามด้วยการแจกแจงตามแบรนด์ ภูมิภาค ประเภททำเล และรูปแบบงาน พร้อมกราฟแนวโน้มรายได้รายเดือนที่มีตัวกรองวันที่ หน้ากราฟมีหมายเหตุว่าเดือนท้าย ๆ ข้อมูลยังไม่ครบ เพื่อไม่ให้ช่วงที่ลดลงถูกอ่านว่ายอดขายตก',
-          } },
-      ],
-      gallery: [
-        { src: 'popup-revenue-trend', cap: { en: 'Monthly revenue trend, annotated so incomplete months are not mistaken for a decline', th: 'แนวโน้มรายได้รายเดือน พร้อมหมายเหตุไม่ให้เดือนที่ข้อมูลไม่ครบถูกเข้าใจว่ายอดตก' } },
-      ],
-    },
-
-    /* ------------------------------------------------------------ */
-    {
-      slug: 'review-sentiment',
-      title: 'Review Sentiment',
-      year: 2026, status: 'done', color: '#fccadc',
-      cover: 'sentiment-analyze',
-      coverCap: {
-        en: 'A single review scored with its confidence and class probabilities.',
-        th: 'รีวิวหนึ่งรายการที่ถูกให้คะแนน พร้อมความมั่นใจและความน่าจะเป็นของแต่ละคลาส',
-      },
-      kind: { en: 'NLP & data science', th: 'NLP และ data science' },
-      role: { en: 'NLP & data science', th: 'NLP และ data science' },
-      github: 'https://github.com/suphakit085/Sentiment-Analysis-of-Restaurant-Reviews-using-NLP-and-Machine-Learning',
-      stack: ['Python', 'scikit-learn', 'TF-IDF', 'Streamlit'],
-      metric: { en: 'Accuracy 84.1% · 4 models', th: 'Accuracy 84.1% · 4 โมเดล' },
-      metrics: [
-        ['10,000', { en: 'Reviews', th: 'รีวิว' }],
-        ['84.1%', { en: 'Accuracy', th: 'Accuracy' }],
-        ['4', { en: 'Models compared', th: 'โมเดลที่เปรียบเทียบ' }],
-        ['3', { en: 'Classes', th: 'คลาส' }],
-      ],
-      summary: {
-        en: 'A natural-language-processing pipeline that reads 10,000 Yelp restaurant reviews and labels each one as positive, neutral or negative.',
-        th: 'NLP pipeline ที่อ่านรีวิวร้านอาหารจาก Yelp 10,000 รีวิว แล้วจัดแต่ละรีวิวเป็นเชิงบวก กลาง หรือลบ',
-      },
-      sections: [
-        { h: { en: 'Overview', th: 'ภาพรวม' },
-          p: {
-            en: 'Restaurants receive far more reviews than anyone can read. This project trains a classifier on 10,000 English Yelp restaurant reviews to label each one positive, neutral or negative, and ships it as a small app for single or batch predictions.',
-            th: 'ร้านอาหารได้รีวิวมากเกินกว่าที่ใครจะอ่านไหว โปรเจกต์นี้เทรน classifier บนรีวิวภาษาอังกฤษจาก Yelp 10,000 รีวิว ให้จัดเป็นบวก กลาง หรือลบ แล้วส่งมอบเป็นแอปเล็ก ๆ ที่ทำนายได้ทั้งทีละรีวิวและทีละหลายรีวิว',
-          } },
-        { h: { en: 'Approach', th: 'วิธีทำ' },
-          items: {
-            en: [
-              'Converted the reviews into TF-IDF features.',
-              'Compared Naive Bayes, Logistic Regression, SVM and class-balanced variants, choosing the final model by macro F1 so the smaller neutral class counts as much as the others.',
-              'Tuned hyperparameters with cross-validation.',
-              'Studied the errors with confusion matrices and per-class F1 to address class imbalance.',
-              'Reached 84.1% accuracy on the test set.',
-            ],
-            th: [
-              'แปลงรีวิวเป็น feature แบบ TF-IDF',
-              'เปรียบเทียบ Naive Bayes, Logistic Regression, SVM และแบบ class-balanced เลือกโมเดลสุดท้ายด้วย macro F1 เพื่อให้คลาส "กลาง" ที่มีน้อยมีน้ำหนักเท่าคลาสอื่น',
-              'จูน hyperparameter ด้วย cross-validation',
-              'วิเคราะห์ความผิดพลาดด้วย confusion matrix และ F1 รายคลาส เพื่อรับมือกับข้อมูลไม่สมดุล',
-              'ได้ accuracy 84.1% บนชุดทดสอบ',
-            ],
-          } },
-        { h: { en: 'The app', th: 'ตัวแอป' },
-          p: {
-            en: 'The app has three parts: Analyze scores a single review and shows the probability for each class; Batch scores one review per line and summarises the distribution; Model report carries the training diagnostics — class balance, model comparison, word clouds per class and per-class F1.',
-            th: 'แอปมี 3 ส่วน: Analyze ให้คะแนนทีละรีวิวพร้อมความน่าจะเป็นของแต่ละคลาส, Batch ให้คะแนนบรรทัดละรีวิวแล้วสรุปการกระจาย และ Model report แสดงผลวินิจฉัยการเทรน — สมดุลคลาส การเทียบโมเดล word cloud รายคลาส และ F1 รายคลาส',
-          } },
-      ],
-      gallery: [
-        { src: 'sentiment-batch', cap: { en: 'Batch mode: every line scored, with the distribution summarised', th: 'โหมด Batch: ให้คะแนนทุกบรรทัด พร้อมสรุปการกระจาย' } },
-        { src: 'sentiment-report', cap: { en: 'Class balance of the corpus and accuracy/precision/recall/F1 across the three models', th: 'สมดุลคลาสของข้อมูล และ accuracy/precision/recall/F1 ของทั้งสามโมเดล' } },
-        { src: 'sentiment-wordclouds', cap: { en: 'Most frequent lemmas per class, and per-class F1 — neutral is the hard class', th: 'คำที่พบบ่อยที่สุดในแต่ละคลาส และ F1 รายคลาส — คลาส "กลาง" ยากที่สุด' } },
-      ],
-    },
   ];
 });
