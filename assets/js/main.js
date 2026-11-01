@@ -122,30 +122,46 @@
     }
   });
 
-  const ratios = ['4 / 5', '4 / 3', '1 / 1', '3 / 4', '16 / 11', '4 / 5'];
+  // the "Work" tab: one clean card per project in this category (each project lives in exactly one)
+  const ROUTE = '<svg class="pw-route" viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-10 150 L60 150 L60 96 L150 96 L150 40 L230 40 L230 120 L330 120" /><circle cx="60" cy="150" r="5"/><circle cx="150" cy="96" r="5"/><circle cx="230" cy="40" r="5"/><circle cx="230" cy="120" r="7" class="end"/></svg>';
+  const metricsHtml = (list) => `<div class="pw-metrics">${list.slice(0, 3).map(([v, l]) => `<div><b>${esc(v)}</b><small>${esc(t(l))}</small></div>`).join('')}</div>`;
+  function projectCard(k) {
+    const p = P[k];
+    return `<a class="pw-card" href="${url(k)}" style="--c:${p.color}">
+      <div class="pw-img"><img src="${img(p.cover, 'sm')}" alt="${esc(p.title)}" loading="lazy"></div>
+      <div class="pw-body">
+        <div class="pw-meta">${badge(p.status)}<span>${p.year}</span><span>·</span><span>${esc(t(p.kind))}</span></div>
+        <h4>${esc(p.title)}</h4>
+        <p>${esc(t(p.summary))}</p>
+        ${metricsHtml(p.metrics)}
+        <span class="pw-more">${esc(ui('pc.more'))}</span>
+      </div></a>`;
+  }
+  function internCard() {
+    const e = D.experience.find((x) => x.kind === 'INTERNSHIP');
+    return `<a class="pw-card is-exp" href="#experience">
+      <div class="pw-img">${ROUTE}<span>${esc(e.org)}</span></div>
+      <div class="pw-body">
+        <div class="pw-meta"><span class="badge done">${e.kind}</span><span>${esc(t(e.where))}</span></div>
+        <h4>${esc(e.title)}</h4>
+        <p>${esc(t(e.points)[2])}</p>
+        ${metricsHtml(e.metrics)}
+        <span class="pw-more">${esc(ui('pc.moreExp'))}</span>
+      </div></a>`;
+  }
   function worksPane(c) {
-    const others = PR.map((p) => p.slug).filter((k) => !c.works.includes(k)).slice(0, 2);
-    const tiles = [...c.works, ...others].map((k, i) => {
-      const p = P[k];
-      return `<a class="m-item" href="${url(k)}" style="--ar:${ratios[i]};background:${p.color}">
-        <img src="${img(p.cover, 'sm')}" alt="${esc(p.title)}" loading="lazy">
-        <span class="m-cap">${esc(p.title)}<small>${p.year}</small></span></a>`;
-    });
-    tiles.splice(1, 0, `<div class="m-item m-note">
-      <div class="who"><img src="${D.profile.avatar}" alt="">Suphakit · ${esc(ui('pc.note'))}</div>
-      <h4>${esc(t(c.note.title))}</h4><p>${esc(t(c.note.body))}</p></div>`);
-    const side = c.works.map((k) => {
-      const p = P[k];
-      return `<a class="s-item" href="${url(k)}">
-        <img src="${img(p.cover, 'sm')}" alt="" loading="lazy">
-        <div><b>${esc(p.title)}</b><small>${p.year} · ${esc(p.stack.slice(0, 2).join(', '))}</small>
-        <div class="metric">${badge(p.status)}</div>
-        <div class="metric">★ ${esc(t(p.metric))}</div></div></a>`;
-    }).join('');
-    return `<div class="pc-grid">
-      <div class="masonry">${tiles.join('')}</div>
-      <aside><div class="side-head"><h4>${esc(ui('pc.key'))}</h4><a href="${D.links.githubRepos}" target="_blank" rel="noopener">${esc(ui('pc.all'))}</a></div>
-      <div class="side-list">${side}</div></aside></div>`;
+    const cards = c.works.map(projectCard);
+    if (c.intern) cards.push(internCard());
+    return `<div class="pw">
+      <div class="pw-list${cards.length === 1 ? ' is-single' : ''}">${cards.join('')}</div>
+      <aside class="pw-side">
+        <div class="pw-note">
+          <div class="who"><img src="${D.profile.avatar}" alt="">Suphakit · ${esc(ui('pc.note'))}</div>
+          <h4>${esc(t(c.note.title))}</h4><p>${esc(t(c.note.body))}</p>
+        </div>
+        <div class="pw-skills"><h5>${esc(ui('pc.skillsUsed'))}</h5>
+          <div class="chips">${c.skills.map((x) => `<span class="chip">${esc(x)}</span>`).join('')}</div></div>
+      </aside></div>`;
   }
   function skillsPane(c) {
     return `<div class="about-pane"><div>

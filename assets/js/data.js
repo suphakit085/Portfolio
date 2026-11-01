@@ -75,7 +75,7 @@
         banner: { text: 'GROUNDED AI', img: '/assets/img/banners/banner-ai.webp', bg: 'linear-gradient(135deg,#0b1f3a,#1d4ed8 60%,#60a5fa)' },
         tags: ['RAG', 'Vector Search', 'Tool Calling'],
         stats: [['3,110', { en: 'Sections', th: 'มาตรา' }], ['31,728', { en: 'Judgments', th: 'ฎีกา' }], ['0.96', 'Recall@10'], ['150', { en: 'Test questions', th: 'คำถามทดสอบ' }]],
-        works: ['thai-law-rag', 'nutrilift', 'genga-studio'],
+        works: ['nutrilift', 'thai-law-rag'],
         note: {
           title: { en: 'Why must the numbers come from code?', th: 'ทำไมตัวเลขต้องคำนวณด้วยโค้ด?' },
           body: {
@@ -95,7 +95,7 @@
         banner: { text: 'MODEL THE SIGNAL', img: '/assets/img/banners/banner-ml.webp', bg: 'linear-gradient(135deg,#3b1d06,#d97706 55%,#fde68a)' },
         tags: ['XGBoost', 'LightGBM', 'TF-IDF'],
         stats: [['0.81', { en: 'F1 (illicit)', th: 'F1 (ธุรกรรมผิดกฎหมาย)' }], ['90.5%', 'Precision'], ['84.1%', 'Accuracy'], ['300K', { en: 'Credit records', th: 'แถวข้อมูลเครดิต' }]],
-        works: ['crypto-fraud', 'review-sentiment', 'thai-law-rag'],
+        works: ['crypto-fraud', 'review-sentiment'],
         note: {
           title: { en: 'Split by time, not at random', th: 'แบ่งข้อมูลตามเวลา ไม่ใช่สุ่ม' },
           body: {
@@ -115,7 +115,8 @@
         banner: { text: 'CLEAR DECISIONS', img: '/assets/img/banners/banner-data.webp', bg: 'linear-gradient(135deg,#042f2e,#0d9488 55%,#99f6e4)' },
         tags: ['Power BI', 'SQL', 'Geospatial'],
         stats: [['398.74M', { en: 'Total revenue', th: 'รายได้รวม' }], ['73.4%', 'Sell-through'], ['2.93%', 'Conversion'], ['Dijkstra', { en: 'Road distance', th: 'ระยะทางตามถนน' }]],
-        works: ['popup-analytics', 'crypto-fraud', 'review-sentiment'],
+        works: ['popup-analytics'],
+        intern: true, // also show the NAYOO internship card — real data work
         note: {
           title: { en: 'More footfall ≠ more sales', th: 'คนเดินเยอะ ≠ ขายได้เยอะ' },
           body: {
@@ -135,7 +136,7 @@
         banner: { text: 'SHIP THE MODEL', img: '/assets/img/banners/banner-products.webp', bg: 'linear-gradient(135deg,#2e1065,#7c3aed 55%,#f0abfc)' },
         tags: ['ComfyUI', 'FastAPI', 'Next.js'],
         stats: [['−98%', { en: 'Gallery payload', th: 'ขนาดข้อมูลแกลเลอรี' }], ['~36s', { en: 'Render time', th: 'เวลาเรนเดอร์ต่อภาพ' }], ['12,000', { en: 'Autocomplete tags', th: 'แท็ก autocomplete' }], ['15 GB', { en: 'Models auto-installed', th: 'โมเดลที่ติดตั้งอัตโนมัติ' }]],
-        works: ['genga-studio', 'nutrilift', 'thai-law-rag'],
+        works: ['genga-studio'],
         note: {
           title: { en: '29 MB → 0.69 MB', th: '29 MB → 0.69 MB' },
           body: {
@@ -155,7 +156,7 @@
         banner: { text: 'REQUIREMENTS FIRST', img: '/assets/img/banners/banner-ba.webp', bg: 'linear-gradient(135deg,#450a0a,#e11d48 55%,#fecdd3)' },
         tags: ['UML', 'ER Diagram', 'Agile / Scrum'],
         stats: [['5', { en: 'Modules', th: 'โมดูล' }], ['3', { en: 'UML diagram types', th: 'แผนภาพ UML' }], ['REST', 'API spec'], ['Postman', { en: 'Every workflow tested', th: 'ทดสอบทุก workflow' }]],
-        works: ['pos-shabu', 'popup-analytics', 'nutrilift'],
+        works: ['pos-shabu'],
         note: {
           title: { en: 'From requirements to API', th: 'จาก requirement ถึง API' },
           body: {
@@ -197,6 +198,11 @@
           ],
         },
         chips: ['Python', 'Geospatial', 'Dijkstra', 'Feature Engineering'],
+        metrics: [
+          ['Dijkstra', { en: 'Distance along real roads', th: 'ระยะทางตามถนนจริง' }],
+          ['2', { en: 'Road classes', th: 'ประเภทถนน หลัก/รอง' }],
+          ['POI', { en: 'Location layers', th: 'ชั้นข้อมูลสถานที่' }],
+        ],
       },
       {
         kind: 'EDUCATION', big: 'B.Sc.', tone: 'yellow',
