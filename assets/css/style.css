@@ -199,7 +199,7 @@ h1, h2, h3, h4, p { margin: 0; }
 .hero-title .line + .line { animation-delay: .15s; font-size: .54em; font-weight: 500; letter-spacing: -.015em; color: var(--ink); margin-top: .35em; }
 @keyframes blurIn { from { opacity: 0; filter: blur(14px); transform: translateY(16px); } }
 .hero-title .hand { padding: 0 .08em; }
-.hero-title .nw { white-space: nowrap; }
+.nw { white-space: nowrap; }
 
 .scribble {
   position: absolute; left: 0; right: 0; bottom: -.12em; width: 100%; height: .32em;
@@ -761,7 +761,7 @@ h1, h2, h3, h4, p { margin: 0; }
   .showcase { padding-top: 80px; }
   .showcase-track { height: auto; }
   .showcase-sticky { position: static; height: auto; min-height: 0; grid-template-columns: minmax(0, 1fr); padding: 0 16px; gap: 20px; }
-  .showcase-side { gap: 10px; }
+  .showcase-side { gap: 10px; position: sticky; top: 74px; z-index: 5; background: var(--bg-soft); margin: 0 -16px; padding: 8px 16px 10px; }
   .showcase-nav { flex-direction: row; overflow-x: auto; gap: 8px; scrollbar-width: none; margin: 0 -16px; padding: 0 16px; }
   .showcase-nav button, .showcase-nav button[aria-current='true'] {
     font-size: 14px; font-weight: 600; padding: 8px 16px; border-radius: 999px; background: #fff; white-space: nowrap; color: var(--muted);
@@ -774,7 +774,8 @@ h1, h2, h3, h4, p { margin: 0; }
   .showcase-side, .profile-card { min-width: 0; }
   .pc-banner { order: -1; }
   .pw, .about-pane { grid-template-columns: minmax(0, 1fr); }
-  .pc-tabs { overflow-x: auto; gap: 20px; }
+  .pc-tabs { overflow-x: auto; gap: 18px; scrollbar-width: none; }
+  .pc-tabs::-webkit-scrollbar, .showcase-nav::-webkit-scrollbar { display: none; }
 
   .notes { height: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 22px 14px; padding-top: 10px; }
   .note { position: relative; left: auto; top: auto; width: 46%; max-width: 240px; min-height: 120px; font-size: 15px; }
@@ -796,6 +797,24 @@ h1, h2, h3, h4, p { margin: 0; }
   .hero-title .line { white-space: normal; }
   .stat-chips { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; width: 100%; }
   .pj-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* let card metric labels wrap instead of truncating */
+  .pw-metrics small { white-space: normal; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+  /* calmer section spacing on phones */
+  .pain { padding: 96px 20px 72px; }
+  .experience { padding: 88px 20px 40px; }
+  .bento-wrap { padding: 72px 20px; }
+  .section-head { margin-bottom: 36px; }
+  /* contact buttons: one tidy full-width column */
+  .contact-actions { flex-direction: column; align-items: stretch; width: 100%; max-width: 320px; }
+  .contact-actions .btn { width: 100%; }
+  /* terminal: short prompt so the hint fits */
+  .term-host { display: none; }
+  .term-in input { font-size: 16px; min-height: 36px; } /* 16px stops iOS zooming in on focus */
+  /* comfortable tap targets */
+  .term-chips button { padding: 8px 12px; }
+  .term-in { padding-top: 10px; padding-bottom: 12px; }
+  .note small a { display: inline-block; padding: 6px 0; }
+  .pj-back, .footer a, .nav-logo { padding: 10px 0; }
   .stat-chip { min-width: 0; padding: 10px 6px; }
   .stat-chip b { font-size: 20px; }
   .stat-chip small { font-size: 11px; text-align: center; line-height: 1.3; }

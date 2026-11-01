@@ -119,6 +119,9 @@
       scrollTo({ top: top + span * ((i + 0.5) / cats.length), behavior: reduced ? 'auto' : 'smooth' });
     } else {
       setCategory(i);
+      // on phones the chips stay pinned; bring the new category's card into view
+      const top = card.getBoundingClientRect().top;
+      if (top < 0) scrollTo({ top: top + scrollY - 140, behavior: reduced ? 'auto' : 'smooth' });
     }
   });
 

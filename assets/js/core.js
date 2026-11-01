@@ -31,7 +31,7 @@
     'story.title': { en: 'In the end, teams still need <pill>people</pill>', th: 'สุดท้ายแล้ว ทีมก็ยังต้องการ <pill>คน</pill>' },
     'work.eyebrow': { en: 'Work · 7 projects', th: 'ผลงาน · 7 โปรเจกต์' },
     'work.github': { en: 'View on GitHub', th: 'ดูบน GitHub' },
-    'pain.title': { en: 'So much data, and still no decision…', th: 'ข้อมูลเยอะ แต่ตัดสินใจไม่ได้..' },
+    'pain.title': { en: 'So much data, and still no decision…', th: 'ข้อมูลเยอะ <nw>แต่ตัดสินใจไม่ได้..</nw>' },
     'pain.sub': { en: 'These are exactly the problems I like to solve', th: 'โจทย์แบบนี้แหละ ที่ผมชอบแก้' },
     'pain.hint': { en: '✦ Go on, drag the notes around', th: '✦ ลองลากโน้ตเล่นดูได้นะ' },
     'exp.eyebrow': { en: 'Experience & education', th: 'ประสบการณ์ & การศึกษา' },
@@ -54,7 +54,7 @@
     'term.welcome': { en: 'Welcome 👋 type <span class="hl">help</span> or tap a button below', th: 'ยินดีต้อนรับ 👋 พิมพ์ <span class="hl">help</span> หรือกดปุ่มด้านล่าง' },
     'term.help': { en: 'Available commands:', th: 'คำสั่งที่ใช้ได้:' },
     'term.notfound': { en: 'command not found: {c} — try <span class="hl">help</span>', th: 'ไม่พบคำสั่ง: {c} — ลองพิมพ์ <span class="hl">help</span>' },
-    'contact.title': { en: 'Have a role that fits?<br />Let’s talk <hand>anytime</hand>', th: 'มีตำแหน่งที่เหมาะกับผม?<br />มาคุยกันได้ <hand>anytime</hand>' },
+    'contact.title': { en: 'Have a role that fits?<br />Let’s talk <hand>anytime</hand>', th: 'มีตำแหน่งที่<nw>เหมาะกับผม?</nw><br />มาคุยกันได้ <hand>anytime</hand>' },
     'contact.note': {
       en: 'Email me any time — I usually reply within 24 hours. Or grab my resume and transcript below.',
       th: 'ส่งอีเมลมาได้เลย ปกติผมตอบภายใน 24 ชั่วโมง หรือดาวน์โหลด Resume และ Transcript ด้านล่าง',
@@ -109,7 +109,8 @@
   /* expand the tiny markup used in UI strings */
   const rich = (s) => String(s)
     .replace(/<hand>(.*?)<\/hand>/g, `<span class="hand">$1${SCRIBBLE}</span>`)
-    .replace(/<pill>(.*?)<\/pill>/g, '<span class="hand hand-pill">$1</span>');
+    .replace(/<pill>(.*?)<\/pill>/g, '<span class="hand hand-pill">$1</span>')
+    .replace(/<nw>(.*?)<\/nw>/g, '<span class="nw">$1</span>');
 
   const img = (name, size) => `/assets/img/projects/${name}${size === 'sm' ? '-sm' : ''}.webp`;
   const badge = (status, lang) => `<span class="badge ${status}">${esc(ui('status.' + status, lang))}</span>`;
