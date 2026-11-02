@@ -821,6 +821,9 @@ h1, h2, h3, h4, p { margin: 0; }
   /* terminal: short prompt so the hint fits */
   .term-host { display: none; }
   .term-in input { font-size: 16px; min-height: 36px; } /* 16px stops iOS zooming in on focus */
+  .term-out { min-height: 84px; }
+  .bento-wrap { padding-bottom: 32px; }
+  .glance-metrics { display: none; } /* same numbers already sit at the top of the project page */
   /* comfortable tap targets */
   .term-chips button { padding: 8px 12px; }
   .term-in { padding-top: 10px; padding-bottom: 12px; }

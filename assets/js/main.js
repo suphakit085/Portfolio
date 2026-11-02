@@ -135,7 +135,7 @@
     return `<a class="pw-card${variant ? ' is-' + variant : ''}" href="${url(k)}" style="--c:${p.color}">
       <div class="pw-img"><img src="${img(p.cover, 'sm')}" alt="${esc(p.title)}" loading="lazy"></div>
       <div class="pw-body">
-        <div class="pw-meta">${badge(p.status)}<span>${p.year}</span>${compact ? '' : `<span>·</span><span>${esc(t(p.kind))}</span>`}</div>
+        <div class="pw-meta">${badge(p.status)}<span>${p.year}</span>${compact ? '' : `<span class="nw">· ${esc(t(p.kind))}</span>`}</div>
         <h4>${esc(p.title)}</h4>
         ${compact ? `<div class="pw-line">★ ${esc(t(p.metric))}</div>` : `<p>${esc(t(p.summary))}</p>${metricsHtml(p.metrics)}`}
         <span class="pw-more">${esc(ui('pc.more'))}</span>
