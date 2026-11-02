@@ -12,8 +12,8 @@
   const UI = {
     'meta.title': { en: 'Suphakit Kaeokaemthong · AI & Data Portfolio', th: 'Suphakit Kaeokaemthong · พอร์ตโฟลิโอสาย AI & Data' },
     'meta.desc': {
-      en: 'Computer Science student at Khon Kaen University focused on AI and data: RAG systems, machine learning, NLP and BI dashboards. 7 projects, open to co-op.',
-      th: 'นักศึกษา Computer Science มหาวิทยาลัยขอนแก่น สาย AI และ Data — ระบบ RAG, machine learning, NLP และ BI dashboard รวม 7 โปรเจกต์ เปิดรับ Co-op',
+      en: 'Computer Science student at Khon Kaen University focused on AI and data: RAG systems, machine learning, NLP and BI dashboards. 8 projects, open to co-op.',
+      th: 'นักศึกษา Computer Science มหาวิทยาลัยขอนแก่น สาย AI และ Data — ระบบ RAG, machine learning, NLP และ BI dashboard รวม 8 โปรเจกต์ เปิดรับ Co-op',
     },
     'nav.work': { en: 'Work', th: 'ผลงาน' },
     'nav.experience': { en: 'Experience', th: 'ประสบการณ์' },
@@ -29,7 +29,7 @@
     'hero.cta2': { en: 'Get in touch', th: 'ติดต่อผม' },
     'hero.scroll': { en: 'Scroll', th: 'เลื่อนลง' },
     'story.title': { en: 'In the end, teams still need <pill>people</pill>', th: 'สุดท้ายแล้ว ทีมก็ยังต้องการ <pill>คน</pill>' },
-    'work.eyebrow': { en: 'Work · 7 projects', th: 'ผลงาน · 7 โปรเจกต์' },
+    'work.eyebrow': { en: 'Work · 8 projects', th: 'ผลงาน · 8 โปรเจกต์' },
     'work.github': { en: 'View on GitHub', th: 'ดูบน GitHub' },
     'pain.title': { en: 'So much data, and still no decision…', th: 'ข้อมูลเยอะ <nw>แต่ตัดสินใจไม่ได้..</nw>' },
     'pain.sub': { en: 'These are exactly the problems I like to solve', th: 'โจทย์แบบนี้แหละ ที่ผมชอบแก้' },

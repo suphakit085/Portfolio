@@ -22,7 +22,7 @@
      HERO
      ========================================================= */
   const hero = $('#hero');
-  const mobilePos = { 'thai-law-rag': [-6, 9], nutrilift: [68, 7] };
+  const mobilePos = { 'compliance-copilot': [-6, 9], nutrilift: [68, 7] };
   function renderHeroCards() {
     $('#heroCards').innerHTML = D.heroCards.map(([key, x, y, r, w, d, hideSm], i) => {
       const isMe = key === 'portrait';
@@ -128,15 +128,16 @@
   // the "Work" tab: one clean card per project in this category (each project lives in exactly one)
   const ROUTE = '<svg class="pw-route" viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-10 150 L60 150 L60 96 L150 96 L150 40 L230 40 L230 120 L330 120" /><circle cx="60" cy="150" r="5"/><circle cx="150" cy="96" r="5"/><circle cx="230" cy="40" r="5"/><circle cx="230" cy="120" r="7" class="end"/></svg>';
   const metricsHtml = (list) => `<div class="pw-metrics">${list.slice(0, 3).map(([v, l]) => `<div><b>${esc(v)}</b><small>${esc(t(l))}</small></div>`).join('')}</div>`;
-  function projectCard(k) {
+  // variant: '' (grid card) · 'wide' (one row, image left) · 'feature' (tall, spans two rows) · 'compact' (small row beside a featured card)
+  function projectCard(k, variant = '') {
     const p = P[k];
-    return `<a class="pw-card" href="${url(k)}" style="--c:${p.color}">
+    const compact = variant === 'compact';
+    return `<a class="pw-card${variant ? ' is-' + variant : ''}" href="${url(k)}" style="--c:${p.color}">
       <div class="pw-img"><img src="${img(p.cover, 'sm')}" alt="${esc(p.title)}" loading="lazy"></div>
       <div class="pw-body">
-        <div class="pw-meta">${badge(p.status)}<span>${p.year}</span><span>·</span><span>${esc(t(p.kind))}</span></div>
+        <div class="pw-meta">${badge(p.status)}<span>${p.year}</span>${compact ? '' : `<span>·</span><span>${esc(t(p.kind))}</span>`}</div>
         <h4>${esc(p.title)}</h4>
-        <p>${esc(t(p.summary))}</p>
-        ${metricsHtml(p.metrics)}
+        ${compact ? `<div class="pw-line">★ ${esc(t(p.metric))}</div>` : `<p>${esc(t(p.summary))}</p>${metricsHtml(p.metrics)}`}
         <span class="pw-more">${esc(ui('pc.more'))}</span>
       </div></a>`;
   }
@@ -153,10 +154,13 @@
       </div></a>`;
   }
   function worksPane(c) {
-    const cards = c.works.map(projectCard);
+    // 1 item → one wide card · 2 → side by side · 3+ → the first featured on the left, the rest compact on the right
+    let cards;
+    if (c.works.length >= 3) cards = [projectCard(c.works[0], 'feature'), ...c.works.slice(1).map((k) => projectCard(k, 'compact'))];
+    else cards = c.works.map((k) => projectCard(k, c.works.length === 1 && !c.intern ? 'wide' : ''));
     if (c.intern) cards.push(internCard());
     return `<div class="pw">
-      <div class="pw-list${cards.length === 1 ? ' is-single' : ''}">${cards.join('')}</div>
+      <div class="pw-list${c.works.length >= 3 ? ' has-feature' : ''}">${cards.join('')}</div>
       <aside class="pw-side">
         <div class="pw-note">
           <div class="who"><img src="${D.profile.avatar}" alt="">Suphakit · ${esc(ui('pc.note'))}</div>

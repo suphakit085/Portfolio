@@ -144,7 +144,7 @@ def project(p):
     pill(d, (64, 64), f"{status} · {p['year']}", font('semi', 20), (255, 255, 255), INK, dot=dot)
     title_font = font('bold', 72 if len(p['title']) <= 14 else 60)
     y = 140
-    for line in wrap(d, p['title'], title_font, 560):
+    for line in wrap(d, p['title'], title_font, 500):
         d.text((64, y), line, font=title_font, fill=INK)
         y += title_font.size + 8
     y += 12

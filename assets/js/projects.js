@@ -10,6 +10,103 @@
   return [
     /* ------------------------------------------------------------ */
     {
+      slug: 'compliance-copilot',
+      title: 'Compliance Copilot',
+      year: 2026, status: 'done', color: '#c7d2fe',
+      cover: 'cc-chat-answer',
+      coverCap: {
+        en: 'A verified answer: every citation was checked against the source in code, and the quoted wording is highlighted in the original document.',
+        th: 'คำตอบที่ผ่านการตรวจ: ทุกการอ้างอิงถูกโค้ดตรวจเทียบกับต้นฉบับ และไฮไลต์ข้อความที่อ้างไว้ในเอกสารจริง',
+      },
+      kind: { en: 'RAG · evaluation · governance', th: 'RAG · การวัดผล · governance' },
+      role: {
+        en: 'End to end — retrieval, citation checks, evaluation, web app and ops',
+        th: 'ทำครบวงจร — ระบบค้นหา การตรวจคำอ้างอิง การวัดผล เว็บแอป และการดูแลระบบ',
+      },
+      github: 'https://github.com/suphakit085/Compliance-Copilot',
+      stack: ['FastAPI', 'PostgreSQL', 'pgvector', 'BGE-M3', 'Gemini API', 'Next.js', 'Docker', 'Prometheus'],
+      metric: { en: 'Blind Hit@6 92–94% · 0 leaks', th: 'Hit@6 แบบ blind 92–94% · เอกสารลับรั่ว 0' },
+      metrics: [
+        ['218', { en: 'Eval questions', th: 'คำถามประเมิน' }],
+        ['94.1%', { en: 'Hit@6 · blind held-out', th: 'Hit@6 · held-out แบบ blind' }],
+        ['0', { en: 'Confidential leaks', th: 'เอกสารลับรั่วไหล' }],
+        ['550', { en: 'Automated tests', th: 'เทสต์อัตโนมัติ' }],
+      ],
+      summary: {
+        en: 'A RAG assistant for Thai banking and securities compliance. Every sentence is cited to the exact section of the law, each citation is verified in code against the source text, and when the evidence is weak it refuses to answer.',
+        th: 'ผู้ช่วย AI สำหรับทีม Compliance ธนาคารและธุรกิจหลักทรัพย์ ทุกประโยคอ้างอิงถึงระดับมาตรา/ข้อ โค้ดตรวจว่าข้อความที่อ้างมีอยู่ในต้นฉบับจริง และถ้าหลักฐานไม่พอจะไม่ตอบ',
+      },
+      sections: [
+        { h: { en: 'Overview', th: 'ภาพรวม' },
+          p: {
+            en: 'Compliance teams answer legal questions every day, and "probably right" is not good enough. A generic chatbot invents section numbers, mixes old and new versions of a rule, ignores who may see which document, and leaves no audit trail. The design rule here is simple: no verifiable evidence, no answer. It covers the PDPA, the Anti-Money Laundering Act, the CDD ministerial regulation, and Bank of Thailand and SEC notifications, alongside internal policies.',
+            th: 'ทีม Compliance ต้องตอบคำถามกฎหมายทุกวัน และคำตอบที่ "น่าจะถูก" ยังไม่พอ แชตบอตทั่วไปมักแต่งเลขมาตราขึ้นเอง ปนกฎฉบับเก่ากับฉบับใหม่ ไม่สนว่าใครมีสิทธิ์เห็นเอกสารไหน และไม่มีบันทึกให้ตรวจสอบย้อนหลัง ระบบนี้จึงยึดหลักเดียว: ไม่มีหลักฐานที่ตรวจสอบได้ ก็ไม่ตอบ ครอบคลุม PDPA, พ.ร.บ.ป้องกันและปราบปรามการฟอกเงิน, กฎกระทรวง CDD, ประกาศ ธปท. และ ก.ล.ต. รวมถึงนโยบายภายใน',
+          } },
+        { h: { en: 'What I built', th: 'สิ่งที่ผมสร้าง' },
+          items: {
+            en: [
+              'Verified citations: the model must return a verbatim quote for every citation, and code checks that the quote exists in the cited passage. If none verify, the user sees the source text instead of the answer.',
+              'Abstention: if the best reranker score falls below a calibrated threshold, the language model is never called.',
+              'Hybrid retrieval: BGE-M3 dense vectors, Thai-segmented BM25 and explicit section lookup, fused and re-ordered by a cross-encoder, with a glossary that maps the words staff use to the words in the law.',
+              'Thai legal documents: repairs broken Thai text from government PDFs, parses the มาตรา/ข้อ structure and amendment footnotes, and falls back to OCR for scanned pages.',
+              'Time-aware answers: each answer follows the version in force on a chosen date, while older versions stay searchable.',
+              'Access control, twice: clearance filters inside the retrieval SQL and PostgreSQL row-level security under a read-only role. A test deletes the SQL filter and confirms nothing leaks.',
+              'Privacy and audit: personal data is masked before it reaches the model (Thai ID checksum, card numbers, phones, names), prompt injection is screened, and every exchange goes into a hash-chained audit log that is re-verified hourly.',
+              'Policy gap analysis: checks each clause of an internal policy against the law and produces a reviewable worklist with verified quotes.',
+            ],
+            th: [
+              'ตรวจการอ้างอิงด้วยโค้ด: โมเดลต้องส่งข้อความที่ยกมาแบบคำต่อคำทุกครั้งที่อ้างอิง แล้วโค้ดตรวจว่าข้อความนั้นมีอยู่ในต้นฉบับจริง ถ้าไม่ผ่านเลยสักรายการ ผู้ใช้จะเห็นต้นฉบับแทนคำตอบ',
+              'ไม่ตอบเมื่อหลักฐานอ่อน: ถ้าคะแนนของ reranker ต่ำกว่าเกณฑ์ที่ปรับเทียบไว้ ระบบจะไม่เรียกโมเดลภาษาเลย',
+              'ค้นหาแบบผสม: BGE-M3, BM25 ที่ตัดคำภาษาไทย และการค้นเลขมาตราโดยตรง รวมอันดับแล้วเรียงใหม่ด้วย cross-encoder พร้อมอภิธานศัพท์ที่แปลงคำที่พนักงานใช้ให้ตรงกับถ้อยคำในกฎหมาย',
+              'รองรับเอกสารกฎหมายไทย: ซ่อมข้อความไทยที่เพี้ยนจาก PDF ราชการ แยกโครงสร้างมาตรา/ข้อและเชิงอรรถฉบับแก้ไข และใช้ OCR กับหน้าที่เป็นภาพสแกน',
+              'ตอบตามช่วงเวลา: คำตอบอิงฉบับที่มีผลบังคับ ณ วันที่เลือก และยังค้นฉบับเก่าได้',
+              'คุมสิทธิ์เข้าถึงสองชั้น: กรองสิทธิ์ใน SQL ของการค้นหา และใช้ Row-Level Security ของ PostgreSQL ภายใต้ role แบบอ่านอย่างเดียว มีเทสต์ที่ลบตัวกรองชั้น SQL ทิ้งแล้วยืนยันว่าเอกสารลับไม่รั่ว',
+              'ความเป็นส่วนตัวและการตรวจสอบ: ปิดบังข้อมูลส่วนบุคคลก่อนส่งให้โมเดล (เลขบัตรประชาชน เลขบัตร เบอร์โทร ชื่อ) คัดกรอง prompt injection และบันทึกทุกคำถามคำตอบลง audit log แบบ hash chain ที่ตรวจซ้ำทุกชั่วโมง',
+              'Gap Analysis นโยบาย: ตรวจนโยบายภายในเทียบกฎหมายทีละข้อ แล้วออกเป็นรายการให้ทีมตรวจทาน พร้อมข้อความอ้างอิงที่ผ่านการตรวจแล้ว',
+            ],
+          } },
+        { h: { en: 'Results', th: 'ผลการวัด' },
+          p: {
+            en: '218 evaluation questions in three sets, scored with deterministic checks rather than an LLM judge:',
+            th: 'คำถามประเมิน 218 ข้อ แบ่งเป็น 3 ชุด ให้คะแนนด้วยเกณฑ์ที่ตรวจได้แน่นอน ไม่ได้ใช้ LLM เป็นกรรมการ:',
+          },
+          items: {
+            en: [
+              'Baseline (fixed-size chunks + vector search): Hit@6 of 51.6–57.5%. Splitting documents by legal unit (มาตรา/ข้อ) alone lifted it to 90%.',
+              'Held-out set of 21 questions, first blind run: Hit@6 94.1% and correct behaviour 85.7% — it exposed three real defects, which were then fixed.',
+              'Extended set of 146 questions, first blind run: Hit@6 92.2% and correct behaviour 94.5%.',
+              'Confidential-document leakage was 0 in every set, cited quotes were found verbatim in the source 95.9–98% of the time, and end-to-end answers took 3.5 s at p50 and 8.8 s at p95.',
+            ],
+            th: [
+              'Baseline (ตัดเอกสารตามขนาด + vector search): Hit@6 อยู่ที่ 51.6–57.5% แค่เปลี่ยนมาตัดเอกสารตามหน่วยกฎหมาย (มาตรา/ข้อ) ก็ขึ้นเป็น 90%',
+              'ชุด held-out 21 ข้อ รันรอบแรกแบบ blind: Hit@6 94.1% พฤติกรรมถูก 85.7% และเจอบั๊กจริง 3 จุดซึ่งแก้แล้ว',
+              'ชุด extended 146 ข้อ รันรอบแรกแบบ blind: Hit@6 92.2% พฤติกรรมถูก 94.5%',
+              'เอกสารลับรั่วไหล 0 ในทุกชุด ข้อความที่อ้างตรงกับต้นฉบับแบบคำต่อคำ 95.9–98% และตอบครบทั้งกระบวนการใช้เวลา 3.5 วินาที (p50) / 8.8 วินาที (p95)',
+            ],
+          } },
+        { h: { en: 'What these numbers do not prove', th: 'สิ่งที่ตัวเลขเหล่านี้ยังไม่ได้พิสูจน์' },
+          p: {
+            en: 'All test questions were written by engineers and none is confirmed by a compliance expert yet; the internal policies are synthetic samples; and the system has not been used by real users or penetration-tested. The repository says so openly and ships the tooling to close that gap.',
+            th: 'คำถามทดสอบทั้งหมดเขียนโดยฝั่งผู้พัฒนา ยังไม่มีผู้เชี่ยวชาญด้าน Compliance ยืนยันเฉลย นโยบายภายในเป็นข้อมูลจำลอง และระบบยังไม่เคยใช้กับผู้ใช้จริงหรือผ่านการทดสอบเจาะระบบ ใน repo บอกข้อจำกัดเหล่านี้ไว้ตรง ๆ พร้อมเครื่องมือสำหรับปิดช่องว่างนี้',
+          } },
+        { h: { en: 'Tools', th: 'เครื่องมือ' },
+          p: {
+            en: 'Python and FastAPI, PostgreSQL with pgvector, BGE-M3 with a cross-encoder reranker, the Gemini API, Next.js with shadcn/ui, Docker with a production compose file, GitHub Actions running 550 tests on every push, and Prometheus with 12 alert rules about answer trustworthiness.',
+            th: 'Python และ FastAPI, PostgreSQL กับ pgvector, BGE-M3 คู่กับ cross-encoder reranker, Gemini API, Next.js กับ shadcn/ui, Docker พร้อม compose สำหรับ production, GitHub Actions ที่รันเทสต์ 550 ตัวทุกครั้งที่ push และ Prometheus พร้อมกฎแจ้งเตือน 12 ข้อที่วัดความน่าเชื่อถือของคำตอบ',
+          } },
+      ],
+      gallery: [
+        { src: 'cc-architecture', cap: { en: 'How an answer is made: every stage is a code check, not a prompt — if verification fails, the system refuses instead of guessing.', th: 'เส้นทางของคำตอบ: ทุกขั้นเป็นการตรวจด้วยโค้ด ไม่ใช่แค่ prompt ถ้าตรวจไม่ผ่าน ระบบจะปฏิเสธแทนการเดา' } },
+        { src: 'cc-streaming-draft', cap: { en: 'Streaming: real pipeline progress, sources first, then text labelled as an unverified draft until the citations are checked.', th: 'Streaming: แสดงความคืบหน้าจริง ขึ้นแหล่งอ้างอิงก่อน แล้วตามด้วยข้อความที่ติดป้ายว่าเป็นร่างจนกว่าจะตรวจการอ้างอิงเสร็จ' } },
+        { src: 'cc-gap-analysis', cap: { en: 'Policy gap analysis: each internal clause checked against the law, with verified quotes.', th: 'Gap Analysis: ตรวจนโยบายภายในทีละข้อเทียบกับกฎหมาย พร้อมข้อความอ้างอิงที่ผ่านการตรวจ' } },
+        { src: 'cc-documents', cap: { en: 'Document library: legal-unit chunks, effective dates, and an owner / approver / review-due governance panel.', th: 'คลังเอกสาร: แบ่งตามหน่วยกฎหมาย มีวันมีผลบังคับ และแผงกำกับดูแลที่ระบุเจ้าของ ผู้อนุมัติ และกำหนดทบทวน' } },
+        { src: 'cc-evaluation', cap: { en: 'Evaluation dashboard: blind and after-fix results, per category.', th: 'แดชบอร์ดผลการวัด: แยกผลรอบ blind กับหลังแก้ไข และแยกตามหมวด' } },
+        { src: 'cc-audit', cap: { en: 'Audit trail: hash-chained, and one click re-verifies the whole chain.', th: 'บันทึกการตรวจสอบ: เชื่อมกันแบบ hash chain กดครั้งเดียวตรวจซ้ำได้ทั้งสาย' } },
+      ],
+    },
+
+    /* ------------------------------------------------------------ */
+    {
       slug: 'nutrilift',
       title: 'NutriLift Chatbot',
       year: 2026, status: 'done', color: '#c5e5c0',

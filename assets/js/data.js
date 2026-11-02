@@ -28,7 +28,7 @@
         en: 'During my internship as a Data Scientist at NAYOO Corporation I prepared the location data behind a land-price model, and designed a road-distance algorithm so accessibility was measured along real roads instead of straight lines. Since then I have built RAG systems that cite every source, trained models that are scored only on data they have never seen, and taken 300,000 credit records through feature engineering to a working LightGBM app. One rule runs through all of it: every number has to be checkable.',
         th: 'ระหว่างฝึกงานเป็น Data Scientist ที่ NAYOO Corporation ผมเตรียมข้อมูลทำเลให้โมเดลราคาที่ดิน และออกแบบอัลกอริทึมวัดระยะทาง ตามถนนจริง แทนเส้นตรง หลังจากนั้นผมสร้างระบบ RAG ที่อ้างอิงแหล่งที่มาได้ทุกจุด เทรนโมเดลโดยวัดผลกับข้อมูลที่โมเดลไม่เคยเห็นเท่านั้น และทำ feature engineering กับข้อมูลเครดิต 300,000 แถว จนออกมาเป็นแอป LightGBM ที่ใช้งานได้จริง สิ่งที่ผมยึดในทุกโปรเจกต์คือ ตัวเลขทุกตัวต้องตรวจสอบได้',
       },
-      trust: { en: '7 projects · all completed', th: '7 โปรเจกต์ · เสร็จสมบูรณ์ทั้งหมด' },
+      trust: { en: '8 projects · all completed', th: '8 โปรเจกต์ · เสร็จสมบูรณ์ทั้งหมด' },
       looking: {
         en: 'A co-op placement in AI, data science or data analysis.',
         th: 'ตำแหน่ง Co-op ด้าน AI, Data Science หรือ Data Analysis',
@@ -45,7 +45,7 @@
     },
 
     heroStats: [
-      { value: 7, label: { en: 'Projects', th: 'โปรเจกต์' } },
+      { value: 8, label: { en: 'Projects', th: 'โปรเจกต์' } },
       { value: 4, label: { en: 'Study year', th: 'ชั้นปี' } },
       { value: 2027, label: { en: 'Graduating', th: 'จบการศึกษา' } },
       { value: 3.03, label: { en: 'GPA', th: 'GPA' }, decimals: 2 },
@@ -53,13 +53,13 @@
 
     /* การ์ดลอยใน hero: slug, x%, y%, หมุน, กว้าง, ความลึก parallax, ซ่อนบนมือถือ */
     heroCards: [
-      ['thai-law-rag', 3, 13, -6, 220, 18],
+      ['compliance-copilot', 3, 13, -6, 220, 18],
       ['popup-analytics', 1, 48, 4, 200, 26, true],
       ['crypto-fraud', 13, 74, -3, 180, 12, true],
       ['nutrilift', 82, 11, 5, 210, 22],
       ['genga-studio', 86, 47, -5, 190, 14, true],
       ['review-sentiment', 72, 75, 4, 200, 24, true],
-      ['pos-shabu', 25, 88, 3, 170, 10, true],
+      ['thai-law-rag', 25, 88, 3, 170, 10, true],
       ['portrait', 60, 89, -4, 160, 16, true],
     ],
 
@@ -74,16 +74,16 @@
         },
         banner: { text: 'GROUNDED AI', img: '/assets/img/banners/banner-ai.webp', bg: 'linear-gradient(135deg,#0b1f3a,#1d4ed8 60%,#60a5fa)' },
         tags: ['RAG', 'Vector Search', 'Tool Calling'],
-        stats: [['3,110', { en: 'Sections', th: 'มาตรา' }], ['31,728', { en: 'Judgments', th: 'ฎีกา' }], ['0.96', 'Recall@10'], ['150', { en: 'Test questions', th: 'คำถามทดสอบ' }]],
-        works: ['nutrilift', 'thai-law-rag'],
+        stats: [['218', { en: 'Eval questions', th: 'คำถามประเมิน' }], ['0', { en: 'Confidential leaks', th: 'เอกสารลับรั่วไหล' }], ['0.96', 'Recall@10'], ['550', { en: 'Automated tests', th: 'เทสต์อัตโนมัติ' }]],
+        works: ['compliance-copilot', 'nutrilift', 'thai-law-rag'],
         note: {
-          title: { en: 'Why must the numbers come from code?', th: 'ทำไมตัวเลขต้องคำนวณด้วยโค้ด?' },
+          title: { en: 'The blind test found what tuning hid', th: 'ชุดทดสอบ blind เจอบั๊กที่ชุดจูนซ่อนไว้' },
           body: {
-            en: 'In NutriLift, BMR, TDEE and macro formulas live in tested Python functions the model calls as tools — so the figures cannot be invented.',
-            th: 'ใน NutriLift สูตร BMR, TDEE และ macro อยู่ในฟังก์ชัน Python ที่มี test ครอบ โมเดลแค่เรียกใช้เป็น tool — จึงแต่งตัวเลขเองไม่ได้',
+            en: 'Compliance Copilot scored 100% on its 51 tuning questions. 21 new questions, run once and blind, scored 85.7% — and exposed three real bugs, such as repeating an internal policy’s wrong 45-day deadline instead of the law’s 30 days.',
+            th: 'Compliance Copilot ได้ 100% กับคำถาม 51 ข้อที่ใช้จูน แต่พอเขียนคำถามใหม่ 21 ข้อแล้วรันครั้งเดียวแบบ blind ได้ 85.7% และเจอบั๊กจริง 3 จุด เช่น ตอบกำหนดเวลา 45 วันตามนโยบายภายในที่ผิด แทน 30 วันตามกฎหมาย',
           },
         },
-        skills: ['Gemini API', 'pgvector', 'Qdrant', 'BGE-M3', 'Cross-encoder rerank', 'FastAPI', 'pytest'],
+        skills: ['Gemini API', 'pgvector', 'BGE-M3', 'BM25 (Thai)', 'Cross-encoder rerank', 'Qdrant', 'Row-level security', 'FastAPI', 'pytest'],
       },
       {
         key: 'ml', label: 'Machine Learning',
@@ -174,7 +174,7 @@
       { text: { en: 'Thai has no spaces — keyword search misses everything?', th: 'ภาษาไทยไม่มีเว้นวรรค ค้นด้วย keyword ไม่เจอ?' }, slug: 'thai-law-rag', color: '#a3e0ef' },
       { text: { en: 'A gallery loading 29 MB at a time…', th: 'แกลเลอรีโหลดทีละ 29 MB..' }, slug: 'genga-studio', color: '#eccef3' },
       { text: { en: '94% accuracy — while catching zero fraud?', th: 'Accuracy 94% แต่จับโกงไม่ได้สักรายการ?' }, slug: 'crypto-fraud', color: '#f8da9d' },
-      { text: { en: 'AI citing law sections that don’t exist?', th: 'AI อ้างมาตรากฎหมายที่ไม่มีอยู่จริง?' }, slug: 'thai-law-rag', color: '#fad0b5' },
+      { text: { en: 'AI citing law sections that don’t exist?', th: 'AI อ้างมาตรากฎหมายที่ไม่มีอยู่จริง?' }, slug: 'compliance-copilot', color: '#fad0b5' },
       { text: { en: 'Lots of footfall, so why so few sales?', th: 'คนเดินเยอะ แต่ทำไมยอดขายน้อย?' }, slug: 'popup-analytics', color: '#a5e3d6' },
       { text: { en: 'Ten thousand reviews — who has time to read them?', th: 'รีวิวเป็นหมื่น อ่านไม่ไหว?' }, slug: 'review-sentiment', color: '#fccadc' },
       { text: { en: 'Straight-line distance isn’t the real road distance', th: 'ระยะเส้นตรง ไม่ใช่ระยะทางจริงบนถนน' }, tag: 'NAYOO Internship', color: '#c4ddfb' },

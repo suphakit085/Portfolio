@@ -112,7 +112,7 @@ ${BANNER}
   ${footer}
 
   <dialog class="lightbox" id="lightbox" aria-label="Screenshot">
-    <figure><img src="" alt="" /><figcaption></figcaption></figure>
+    <figure><img alt="" /><figcaption></figcaption></figure>
     <button type="button" class="lb-btn lb-prev" data-nav="-1" aria-label="Previous">←</button>
     <button type="button" class="lb-btn lb-next" data-nav="1" aria-label="Next">→</button>
     <button type="button" class="lb-btn lb-close" data-close aria-label="Close">✕</button>
